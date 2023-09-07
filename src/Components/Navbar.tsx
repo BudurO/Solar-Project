@@ -4,16 +4,13 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import ImgLogoNavbar from '../assets/navbarlogo.svg'
 import ImgeUser from '../assets/User.svg'
-import ImgFlag from '../assets/flag.svg'
-import ImgLine from '../assets/Line.png'
-import ImgNotif from '../assets/Notifications.svg'
 function Navbar() {
-    const user = {
-        name: 'Tom Cook',
-        email: 'tom@example.com',
-        imageUrl:
-          'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      }
+    // const user = {
+    //     name: 'Tom Cook',
+    //     email: 'tom@example.com',
+    //     imageUrl:
+    //       'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    //   }
       const navigation = [
         { name: 'Home', href: '#', current: true },
         { name: 'Our Vision', href: '#', current: false },
@@ -62,10 +59,6 @@ function Navbar() {
                             {item.name}
                           </a>
                         ))}
-                        <img className='h-3' src={ImgFlag}/>
-                        <img className='h-3' src={ImgLine}/>
-                        <img className='h-3' src={ImgNotif}/>
-
                       </div>
                     </div>
                   </div>
@@ -147,23 +140,23 @@ function Navbar() {
                 </div>
                 <div className="border-t border-gray-700 pb-3 pt-4">
                   <div className="flex items-center px-5">
-                    <div className="flex-shrink-0">
+                    {/* <div className="flex-shrink-0">
                     <img className="h-8 w-8 rounded-full" src={ImgeUser} alt="" />
                     </div>
                     <div className="ml-3">
                       <div className="text-base font-medium leading-none text-white">{user.name}</div>
                       <div className="text-sm font-medium leading-none text-gray-400">{user.email}</div>
+                    </div> */}
+                    <div>
+                      <div className='relative ml-auto flex-shrink-0 rounded-full  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white'>Login</div>
                     </div>
                     <button
                       type="button"
-                      className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                      className="relative ml-auto flex-shrink-0 rounded-full  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
                     >
-                      <span className="absolute -inset-1.5" />
-                      <span className="sr-only">View notifications</span>
-                      <BellIcon className="h-6 w-6" aria-hidden="true" />
                     </button>
                   </div>
-                  <div className="mt-3 space-y-1 px-2">
+                  {/* <div className="mt-3 space-y-1 px-2">
                     {userNavigation.map((item) => (
                       <Disclosure.Button
                         key={item.name}
@@ -174,7 +167,7 @@ function Navbar() {
                         {item.name}
                       </Disclosure.Button>
                     ))}
-                  </div>
+                  </div> */}
                 </div>
               </Disclosure.Panel>
             </>

@@ -1,7 +1,7 @@
 import SingnUp from './Pages/SignUp'
 import Navbar from './Components/Navbar'
 import './App.css'
-
+import Footer from './Components/Footer'
 function App() {
 
   return (
@@ -9,6 +9,8 @@ function App() {
    <Navbar/>
 
    <SingnUp/>
+  
+  <Footer/>
     </>
   )
 }
