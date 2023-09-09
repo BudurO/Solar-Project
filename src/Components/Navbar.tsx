@@ -13,7 +13,7 @@ function Navbar() {
     //   }
       const navigation = [
         { name: 'Home', href: '/HomePage', current: true },
-        { name: 'Our Vision', href: '#', current: false },
+        { name: 'Our Vision', href: '#OurVision', current: false },
         { name: 'Contact us', href: '#', current: false },
         { name: 'Service', href: '#', current: false },
       ]
