@@ -5,6 +5,8 @@ import Footer from './Components/Footer'
 import { Routes, Route } from "react-router-dom"
 import LogIn from './Pages/LogIn'
 import HomePage from './Pages/HomePage'
+import RentingForm from './Pages/RentingForm'
+
 function App() {
 
   return (
@@ -16,6 +18,7 @@ function App() {
     <Route path='/HomePage' element={<HomePage/>}/>
     <Route path="/SingnUp" element={ <SingnUp/> }/>
     <Route path='/' element={<LogIn/>}/>
+    <Route path='/rent' element={<RentingForm/>}/>
   </Routes>
 
   <Footer/>
