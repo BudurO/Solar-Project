@@ -8,7 +8,6 @@ import HomePage from './Pages/HomePage'
 import RentingForm from './Pages/RentingForm'
 import RequestListAdmin from './Pages/RequestListAdmin'
 function App() {
-
   return (
     <>
   <Navbar/>

@@ -1,6 +1,13 @@
 import axios from 'axios';
 import React from 'react'
-
+type InfoRent={
+    id:string,
+    Area: string,
+    Locaiton:{placeName:string},
+    State:string,
+    Number:string,
+    Name:string,
+}
 function RequestListAdmin() {
     const [Info, setInfo] = React.useState<InfoRent[]>([]);
     React.useEffect(()=>{
