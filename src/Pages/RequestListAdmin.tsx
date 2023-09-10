@@ -11,9 +11,17 @@ type InfoRent={
 }
 function RequestListAdmin() {
     const [Info, getInfo] = React.useState<InfoRent[]>([]);
-    const [UnderProcess,setUnderProcess] = React.useState<InfoRent[]>([]);
-    const [Approved,setApproved] = React.useState<InfoRent[]>([]);
-    const [Rejected,setRejected] = React.useState<InfoRent[]>([]);
+    // const [UnderProcess,setUnderProcess] = React.useState<InfoRent[]>([]);
+    // const [Approved,setApproved] = React.useState<InfoRent[]>([]);
+    // const [Rejected,setRejected] = React.useState<InfoRent[]>([]);
+    //  const [Statess,setState] = React.useState("New");
+    //  const [allState,setallState] = React.useState([])
+    const States: InfoRent[] = [
+        {   State: 'UnderProcess' },
+        {   State: 'Approved' },
+        {   State: 'Rejected' },
+        // Add more states as needed
+      ];
     React.useEffect(()=>{
         axios.get("https://64f37a17edfa0459f6c69e5b.mockapi.io/Rent")
     .then((res)=>{
@@ -22,7 +30,7 @@ function RequestListAdmin() {
     },[])
     let cunt= 1;
    React.useEffect(() => {
-    States(localStorage.getItem("id"))
+    // States(localStorage.getItem("id"))
    },[])
   return (
     <>
@@ -62,7 +70,13 @@ function RequestListAdmin() {
                                         <tr className="hover:bg-grey-lighter" key={item.id}>
                                             <td className="py-2 px-4 border-b border-grey-light border border-dashed  rounded-full h-10 w-10 text-[.4rem] lg:text-sm md:text-sm">#{cunt++}</td>
                                             <td className="py-2 px-4 border-b border-grey-light border-r text-[.4rem] lg:text-sm md:text-sm">{item.Locaiton.placeName}</td>
-                                            <td className="py-2 px-4 border-b border-grey-light border-r text-[.4rem] lg:text-sm md:text-sm">{item.State}</td>
+                                            <select>
+                                            {States.map((state) => (
+                                                <option key={state.id} value={state.State}>
+                                                {state.State}
+                                                </option>
+                                            ))}
+                                                </select>
                                             <td className="py-2 px-4 border-b border-grey-light border-r text-[.4rem] lg:text-sm md:text-sm">{item.Number}</td>
                                             <td className="py-2 px-4 border-b border-grey-light border-r text-[.4rem] lg:text-sm md:text-sm">{item.Area}</td>
                                         </tr>
