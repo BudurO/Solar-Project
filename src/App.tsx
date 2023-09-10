@@ -6,7 +6,7 @@ import { Routes, Route } from "react-router-dom"
 import LogIn from './Pages/LogIn'
 import HomePage from './Pages/HomePage'
 import RentingForm from './Pages/RentingForm'
-
+import RequestListAdmin from './Pages/RequestListAdmin'
 function App() {
 
   return (
@@ -19,6 +19,7 @@ function App() {
     <Route path="/SingnUp" element={ <SingnUp/> }/>
     <Route path='/' element={<LogIn/>}/>
     <Route path='/rent' element={<RentingForm/>}/>
+    <Route path='/RequestListAdmin' element={<RequestListAdmin/>}/>
   </Routes>
 
   <Footer/>
