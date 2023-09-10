@@ -11,6 +11,9 @@ type InfoRent={
 }
 function RequestListAdmin() {
     const [Info, getInfo] = React.useState<InfoRent[]>([]);
+    const [UnderProcess,setUnderProcess] = React.useState<InfoRent[]>([]);
+    const [Approved,setApproved] = React.useState<InfoRent[]>([]);
+    const [Rejected,setRejected] = React.useState<InfoRent[]>([]);
     React.useEffect(()=>{
         axios.get("https://64f37a17edfa0459f6c69e5b.mockapi.io/Rent")
     .then((res)=>{
@@ -19,8 +22,8 @@ function RequestListAdmin() {
     },[])
     let cunt= 1;
    React.useEffect(() => {
-    
-   })
+    States(localStorage.getItem("id"))
+   },[])
   return (
     <>
  <div className="flex flex-col h-screen bg-gray-100">
