@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React from 'react';
-import Swal from 'sweetalert2'
 
 type InfoRent={
     id:string,
@@ -11,24 +10,17 @@ type InfoRent={
     Name:string,
 }
 function RequestListAdmin() {
-    const [Info, setInfo] = React.useState<InfoRent[]>([]);
+    const [Info, getInfo] = React.useState<InfoRent[]>([]);
     React.useEffect(()=>{
         axios.get("https://64f37a17edfa0459f6c69e5b.mockapi.io/Rent")
     .then((res)=>{
-        setInfo(res.data);
+        getInfo(res.data);
     }) 
     },[])
     let cunt= 1;
-    const deleteRent=(id:string)=>{
-        const swalWithBootstrapButtons = Swal.mixin({
-            customClass: {
-              confirmButton: 'btn btn-success',
-              cancelButton: 'btn btn-danger'
-            },
-            buttonsStyling: false
-          })
-          
-    }
+   React.useEffect(() => {
+    
+   })
   return (
     <>
  <div className="flex flex-col h-screen bg-gray-100">
