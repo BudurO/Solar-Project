@@ -20,7 +20,6 @@ function RequestListAdmin() {
         {   State: 'UnderProcess' },
         {   State: 'Approved' },
         {   State: 'Rejected' },
-        // Add more states as needed
       ];
     React.useEffect(()=>{
         axios.get("https://64f37a17edfa0459f6c69e5b.mockapi.io/Rent")
