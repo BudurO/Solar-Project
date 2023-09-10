@@ -7,10 +7,14 @@ import LogIn from './Pages/LogIn'
 import HomePage from './Pages/HomePage'
 import RentingForm from './Pages/RentingForm'
 import RequestListAdmin from './Pages/RequestListAdmin'
+import Dashboard from './Pages/Dashboard'
+
 function App() {
   return (
     <>
-  <Navbar/>
+    
+    <Navbar/>
+
 
   <Routes>
     {/* <Route path="/" element={ "" }/> */}
@@ -19,6 +23,9 @@ function App() {
     <Route path='/' element={<LogIn/>}/>
     <Route path='/rent' element={<RentingForm/>}/>
     <Route path='/RequestListAdmin' element={<RequestListAdmin/>}/>
+    <Route path='/dashboard' element={<Dashboard/>}>
+      {/* <Route path='/:id' element={<Dashboard/>}/> */}
+    </Route>
   </Routes>
 
   <Footer/>
