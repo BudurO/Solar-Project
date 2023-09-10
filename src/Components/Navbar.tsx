@@ -14,8 +14,8 @@ function Navbar() {
       const navigation = [
         { name: 'Home', href: '/HomePage', current: true },
         { name: 'Our Vision', href: '#OurVision', current: false },
-        { name: 'Contact us', href: '#', current: false },
-        { name: 'Service', href: '#', current: false },
+        { name: 'Contact us', href: '#contactUs', current: false },
+        { name: 'Service', href: '#Service', current: false },
       ]
       const userNavigation = [
         // { name: 'Your Profile', href: '#' },
@@ -39,11 +39,11 @@ function Navbar() {
                 <div className="flex h-16 items-center justify-between">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
-                      <img
+                     <a href='/HomePage'> <img
                         className="h-11"
                         src={ImgLogoNavbar}
                         alt="Solar"
-                      />
+                      /></a>
                     </div>
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
@@ -77,7 +77,7 @@ function Navbar() {
                             <span className="sr-only">Open user menu</span>
                             <img className="h-8 w-8 rounded-full" src={ImgeUser} alt="" /> */}
                             <a className='ml-4 bg-white px-3 py-2 rounded-md' href='/'>Login</a>
-                            <a className='ml-4 bg-white px-3 py-2 rounded-md' href='/SingnUp'>Sign Up</a>
+                            <a className='ml-10 bg-white px-3 py-2 rounded-md' href='/SingnUp'>Sign Up</a>
 
                           </Menu.Button>
                         </div>
