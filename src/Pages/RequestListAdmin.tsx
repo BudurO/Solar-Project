@@ -1,6 +1,65 @@
+import axios from 'axios';
 import React from 'react'
 
 function RequestListAdmin() {
+    const [Info, setInfo] = React.useState<InfoRent[]>([]);
+    React.useEffect(()=>{
+        axios.get("https://64f37a17edfa0459f6c69e5b.mockapi.io/Rent")
+    .then((res)=>{
+        setInfo(res.data);
+    }) 
+    },[])
+    let cunt= 1;
+    const deleteRent=(id:string)=>{
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+              confirmButton: 'btn btn-success',
+              cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+          })
+          
+          swalWithBootstrapButtons.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
+            reverseButtons: true
+          }).then((result) => {
+            if (result.isConfirmed) {
+                axios.delete(`https://64f37a17edfa0459f6c69e5b.mockapi.io/Rent/${id}`)
+        .then((res)=>{
+            console.log(res)
+            setInfo(
+                Info.filter((del)=>{
+                    return del.id !== id;
+
+                }
+                )
+                )
+        })
+              swalWithBootstrapButtons.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+              )
+            } else if (
+              /* Read more about handling dismissals below */
+              result.dismiss === Swal.DismissReason.cancel
+            ) {
+              swalWithBootstrapButtons.fire(
+                'Cancelled',
+                'Your imaginary file is safe :)',
+                'error'
+              )
+            }
+          })
+          
+    }
   return (
     <>
  <div className="flex flex-col h-screen bg-gray-100">
