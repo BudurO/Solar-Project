@@ -50,6 +50,7 @@ function SignUp() {
     }
     else if ( AddInfoUser.PhoneNumber.length < 10){
       seterrorMessage("Phone Number must contain a minimum of 10 Number")
+      return navigate('/SingnUp')    
     }else if (AddInfoUser.Createpassword == "" ){
       const notify = () => toast.warning("Enter Create password");
       notify()
@@ -65,7 +66,6 @@ function SignUp() {
       const notify = () => toast.success("success");
       notify()  
       seterrorMessage("")  
-      return navigate('/')    
     }
 axios.post("https://64f37a17edfa0459f6c69e5b.mockapi.io/users",{
     Email: AddInfoUser.Email,
@@ -75,6 +75,7 @@ axios.post("https://64f37a17edfa0459f6c69e5b.mockapi.io/users",{
 })
 .then((res) => {
   console.log(res);
+  return navigate('/')    
 })
 .catch((err) =>{
   console.log(err);

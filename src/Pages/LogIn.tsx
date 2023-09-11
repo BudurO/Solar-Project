@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom'
 
 type IuserLogIn = {
     id:string,
+    Name: string,
     Email:string,
     Createpassword:string
   }
@@ -20,6 +21,7 @@ function LogIn() {
             id: "",
             Email: "",
             Createpassword:"",
+            Name: ""
           }); 
 
         const [LogInUserO,setLogInUser] = React.useState<IuserLogIn[]>([]); 
@@ -53,8 +55,12 @@ function LogIn() {
                     const notify = () => toast.warn("Invalid");
                     notify()  
                     navigate('/')
+                  }else if(AddInfoUser.Email === "Admin@gmail.com" && AddInfoUser.Createpassword === "AdminAdmin%%%%%%%"){
+                    const notify = () => toast.success("success Admin");
+                    notify()  
+                    navigate('/RequestListAdmin')
                   }else{
-                    const notify = () => toast.success("s");
+                    const notify = () => toast.success(`success${AddInfoUser.Name}`);
                     notify()  
                     navigate('/dashboard')
                   }
