@@ -12,15 +12,16 @@ function Navbar() {
     //       'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     //   }
       const navigation = [
-        { name: 'Home', href: '#', current: true },
-        { name: 'Our Vision', href: '#', current: false },
-        { name: 'Contact us', href: '#', current: false },
-        { name: 'Service', href: '#', current: false },
+        { name: 'Home', href: '/HomePage', current: true },
+        { name: 'Our Vision', href: '#OurVision', current: false },
+        { name: 'Contact us', href: '#contactUs', current: false },
+        { name: 'Service', href: '#Service', current: false },
       ]
       const userNavigation = [
         // { name: 'Your Profile', href: '#' },
         // { name: 'Settings', href: '#' },
         // { name: 'Sign out', href: '#' },
+        { name: 'Log In', href: '/' },
         { name: 'Sign Up', href: '/SingnUp' },
 
       ]
@@ -38,11 +39,11 @@ function Navbar() {
                 <div className="flex h-16 items-center justify-between">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
-                      <img
+                     <a href='/HomePage'> <img
                         className="h-11"
                         src={ImgLogoNavbar}
                         alt="Solar"
-                      />
+                      /></a>
                     </div>
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
@@ -76,7 +77,7 @@ function Navbar() {
                             <span className="sr-only">Open user menu</span>
                             <img className="h-8 w-8 rounded-full" src={ImgeUser} alt="" /> */}
                             <a className='ml-4 bg-white px-3 py-2 rounded-md' href='/'>Login</a>
-                            <a className='ml-4 bg-white px-3 py-2 rounded-md' href='/SingnUp'>Sign Up</a>
+                            <a className='ml-10 bg-white px-3 py-2 rounded-md' href='/SingnUp'>Sign Up</a>
 
                           </Menu.Button>
                         </div>
@@ -125,7 +126,7 @@ function Navbar() {
                       <div className="text-sm font-medium leading-none text-gray-400">{user.email}</div>
                     </div> */}
                     <div>
-                      <div className='relative ml-auto flex-shrink-0 rounded-full  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white'>Login</div>
+                      <a className='relative ml-auto flex-shrink-0 rounded-full  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white' href='/SingnUp'>Sign Up</a>
                     </div>
                     <button
                       type="button"
@@ -133,6 +134,40 @@ function Navbar() {
                     >
                     </button>
                   </div>
+                  
+                  {/* <div className="mt-3 space-y-1 px-2">
+                    {userNavigation.map((item) => (
+                      <Disclosure.Button
+                        key={item.name}
+                        as="a"
+                        href={item.href}
+                        className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
+                      >
+                        {item.name}
+                      </Disclosure.Button>
+                    ))}
+                  </div> */}
+                </div>
+
+                <div className="border-t border-gray-700 pb-3 pt-4">
+                  <div className="flex items-center px-5">
+                    {/* <div className="flex-shrink-0">
+                    <img className="h-8 w-8 rounded-full" src={ImgeUser} alt="" />
+                    </div>
+                    <div className="ml-3">
+                      <div className="text-base font-medium leading-none text-white">{user.name}</div>
+                      <div className="text-sm font-medium leading-none text-gray-400">{user.email}</div>
+                    </div> */}
+                    <div>
+                      <a className='relative ml-auto flex-shrink-0 rounded-full  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white' href='/'>Login</a>
+                    </div>
+                    <button
+                      type="button"
+                      className="relative ml-auto flex-shrink-0 rounded-full  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
+                    >
+                    </button>
+                  </div>
+                  
                   {/* <div className="mt-3 space-y-1 px-2">
                     {userNavigation.map((item) => (
                       <Disclosure.Button
