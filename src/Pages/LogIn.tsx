@@ -56,7 +56,7 @@ function LogIn() {
                   }else{
                     const notify = () => toast.success("s");
                     notify()  
-                    navigate('/rent')
+                    navigate('/dashboard')
                   }
             })
             .catch((error) =>{
