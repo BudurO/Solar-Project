@@ -47,11 +47,10 @@ function LogIn() {
             const notify = () => toast.success("success");
             notify()  
             seterrorMessage("") 
-            return navigate('/HomePage')   
           }
             axios.get("https://64f37a17edfa0459f6c69e5b.mockapi.io/users")
             .then((res) => {
-                  const LonInUser = res.data.filter((cheek : any) => {
+                  const LonInUser = res.data.filter((cheek : string) => {
                      return cheek.Email === AddInfoUser.Email && cheek.Createpassword === AddInfoUser.Createpassword
                   });
                   if (LonInUser.length === 0){
