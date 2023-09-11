@@ -25,72 +25,59 @@ function LogIn() {
         const [LogInUserO,setLogInUser] = React.useState<IuserLogIn[]>([]); 
         const navigate = useNavigate();
 
-        const LogInUser = (Email: string , Createpassword:string) =>{
-          
+        const LogInUser = () =>{
+          if(AddInfoUser.Email == "" && AddInfoUser.Email.length < 8){
+            const notify = () => toast.warning("Enter your Email");
+            notify()
+            return navigate('/') 
+          }else if (!AddInfoUser.Email.includes('@')){
+            seterrorMessage("Email must contain at least one symbol e.g. @ .")
+          }else if (AddInfoUser.Createpassword == "" ){
+            const notify = () => toast.warning("Enter your password");
+            notify()
+            return navigate('/')    
+          }else if (AddInfoUser.Createpassword.length < 8){
+            seterrorMessage("Password must contain a minimum of 8 characters")
+            return navigate('/')    
+          }
+          else if (!AddInfoUser.Createpassword.includes('@') && !AddInfoUser.Createpassword.includes('!') && !AddInfoUser.Createpassword.includes('#') && !AddInfoUser.Createpassword.includes('$') && !AddInfoUser.Createpassword.includes('&') && !AddInfoUser.Createpassword.includes('*') && !AddInfoUser.Createpassword.includes('%')){
+            seterrorMessage("Password must contain at least one symbol e.g. @, !")
+            return navigate('/')    
+          }else{
+            const notify = () => toast.success("success");
+            notify()  
+            seterrorMessage("") 
+            return navigate('/HomePage')   
+          }
             axios.get("https://64f37a17edfa0459f6c69e5b.mockapi.io/users")
-            .then(() => {
-                setLogInUser(
-                  LogInUserO.filter((cheek) => {
-                    if (AddInfoUser.Email == "" && AddInfoUser.Email.length < 8){
-                      const notify = () => toast.warning("Enter your Email");
-                      notify()
-                     return navigate('/') 
-                    }else if (!AddInfoUser.Email.includes('@')){
-                      seterrorMessage("Email must contain at least one symbol e.g. @ .")
-                    }else if (AddInfoUser.Createpassword == "" ){
-                      const notify = () => toast.warning("Enter your password");
-                      notify()
-                      return navigate('/')    
-                    }else if (AddInfoUser.Createpassword.length < 8){
-                      seterrorMessage("Password must contain a minimum of 8 characters")
-                      return navigate('/')    
-                    }
-                    else if (!AddInfoUser.Createpassword.includes('@') && !AddInfoUser.Createpassword.includes('!') && !AddInfoUser.Createpassword.includes('#') && !AddInfoUser.Createpassword.includes('$') && !AddInfoUser.Createpassword.includes('&') && !AddInfoUser.Createpassword.includes('*') && !AddInfoUser.Createpassword.includes('%')){
-                      seterrorMessage("Password must contain at least one symbol e.g. @, !")
-                      return navigate('/')    
-                    }else if (cheek.Email !== AddInfoUser.Email){
-                      const notify = () => toast.success("not");
-                      notify() 
-                    }else if (cheek.Createpassword !== AddInfoUser.Createpassword){
-                      const notify = () => toast.success("not");
-                      notify() 
-                    }
-                    else{
-                      const notify = () => toast.success("success");
-                      notify()  
-                      seterrorMessage("") 
-                      return navigate('/HomePage')   
-                    }
-                    })
-                );
-                console.log(Email,Createpassword);
-
+            .then((res) => {
+                  const LonInUser = res.data.filter((cheek : any) => {
+                     return cheek.Email === AddInfoUser.Email && cheek.Createpassword === AddInfoUser.Createpassword
+                  });
+                  if (LonInUser.length === 0){
+                    const notify = () => toast.warn("Invalid");
+                    notify()  
+                  }else{
+                    const notify = () => toast.success("s");
+                    notify()  
+                    navigate('/rent')
+                  }
             })
-          
-            .catch((err) =>{
-              console.log(err);
-            })
-        // axios.post("https://64f37a17edfa0459f6c69e5b.mockapi.io/users",{
-        //     Email: AddInfoUser.Email,
-        //     Createpassword: AddInfoUser.Createpassword,
-        // })
-        // .then(() => {
-        //   setLogInUser(
-        //     LogInUserO.filter((cheek) => {
-        //       return cheek.id !== id
-        //     })
-        //   )
-        //   console.log(id);
-        //   localStorage.setItem("Name" , AddInfoUser.Email)
-        // })
-        // .catch((err) =>{
-        //   console.log(err);
-          
-        // })
-        // {LogInUserO.map((item) =>{
-        
-        // })} 
-        }
+            .catch((error) =>{
+              console.log(error);
+              
+            });
+          };
+//             axios
+//     .post('https://64f37a17edfa0459f6c69e5b.mockapi.io/users', {
+//       Email: Email,
+//       Createpassword: Createpassword,
+//     })
+//     .catch((error) => {
+//       console.error('Error registering user:', error);
+//     });
+// };
+     
   return (
     <>
     <div className="h-screen flex md:justify-center sm:justify-center">
@@ -105,7 +92,8 @@ function LogIn() {
   <input className="outline-none lg:w-96 md:w-96 sm:w-full" type="email" name="email" id="email" placeholder="example@example.com"
   onChange={(e) => {
   setAddInfoUser({...AddInfoUser,Email: e.target.value})
-  }} 
+  }}
+  value={AddInfoUser.Email} 
   />
 </div>
 <label className='ml-4' htmlFor="password">Password</label>
@@ -114,6 +102,7 @@ function LogIn() {
   onChange={(e) => {
     setAddInfoUser({...AddInfoUser,Createpassword: e.target.value})
     }} 
+    value={AddInfoUser.Createpassword}
   />
   {/* <img src={Imgeyeclose} alt="" /> */}
 </div>
