@@ -43,10 +43,6 @@ function LogIn() {
           else if (!AddInfoUser.Createpassword.includes('@') && !AddInfoUser.Createpassword.includes('!') && !AddInfoUser.Createpassword.includes('#') && !AddInfoUser.Createpassword.includes('$') && !AddInfoUser.Createpassword.includes('&') && !AddInfoUser.Createpassword.includes('*') && !AddInfoUser.Createpassword.includes('%')){
             seterrorMessage("Password must contain at least one symbol e.g. @, !")
             return navigate('/')    
-          }else{
-            const notify = () => toast.success("success");
-            notify()  
-            seterrorMessage("") 
           }
             axios.get("https://64f37a17edfa0459f6c69e5b.mockapi.io/users")
             .then((res) => {
@@ -56,6 +52,7 @@ function LogIn() {
                   if (LonInUser.length === 0){
                     const notify = () => toast.warn("Invalid");
                     notify()  
+                    navigate('/')
                   }else{
                     const notify = () => toast.success("s");
                     notify()  
