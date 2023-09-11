@@ -32,37 +32,37 @@ function SignUp() {
     if (AddInfoUser.Email == "" && AddInfoUser.Email.length < 8){
       const notify = () => toast.warning("Enter Email");
       notify()
-     return navigate('/') 
+     return navigate('/SingnUp') 
     }else if (!AddInfoUser.Email.includes('@')){
       seterrorMessage("Email must contain at least one symbol e.g. @ .")
      }else if(AddInfoUser.Name == ""){
       const notify = () => toast.warning("Enter Name");
       notify()
-      return navigate('/')  
+      return navigate('/SingnUp')  
     }else if ( AddInfoUser.Name.length < 3){
       seterrorMessage("Name must contain a minimum of 3 characters")
     } else if (AddInfoUser.PhoneNumber == "" ){
       const notify = () => toast.warning("Enter Phone Number");
       notify()
-      return navigate('/')    
+      return navigate('/SingnUp')    
     }
     else if ( AddInfoUser.PhoneNumber.length < 10){
       seterrorMessage("Phone Number must contain a minimum of 10 Number")
     }else if (AddInfoUser.Createpassword == "" ){
       const notify = () => toast.warning("Enter Create password");
       notify()
-      return navigate('/')    
+      return navigate('/SingnUp')    
     }else if (AddInfoUser.Createpassword.length < 8){
       seterrorMessage("Password must contain a minimum of 8 characters")
-      return navigate('/')    
+      return navigate('/SingnUp')    
     }
     else if (!AddInfoUser.Createpassword.includes('@') && !AddInfoUser.Createpassword.includes('!') && !AddInfoUser.Createpassword.includes('#') && !AddInfoUser.Createpassword.includes('$') && !AddInfoUser.Createpassword.includes('&') && !AddInfoUser.Createpassword.includes('*') && !AddInfoUser.Createpassword.includes('%')){
       seterrorMessage("Password must contain at least one symbol e.g. @, !")
-      return navigate('/')    
+      return navigate('/SingnUp')    
     }else{
       const notify = () => toast.success("success");
       notify()  
-      seterrorMessage("")    
+      seterrorMessage("")  
     }
 axios.post("https://64f37a17edfa0459f6c69e5b.mockapi.io/users",{
     Email: AddInfoUser.Email,
