@@ -35,12 +35,14 @@ function SignUp() {
      return navigate('/SingnUp') 
     }else if (!AddInfoUser.Email.includes('@')){
       seterrorMessage("Email must contain at least one symbol e.g. @ .")
+      return navigate('/SingnUp')    
      }else if(AddInfoUser.Name == ""){
       const notify = () => toast.warning("Enter Name");
       notify()
       return navigate('/SingnUp')  
-    }else if ( AddInfoUser.Name.length < 3){
+    }else if ( AddInfoUser.Name.length < 1){
       seterrorMessage("Name must contain a minimum of 3 characters")
+      return navigate('/SingnUp')    
     } else if (AddInfoUser.PhoneNumber == "" ){
       const notify = () => toast.warning("Enter Phone Number");
       notify()
@@ -63,6 +65,7 @@ function SignUp() {
       const notify = () => toast.success("success");
       notify()  
       seterrorMessage("")  
+      return navigate('/')    
     }
 axios.post("https://64f37a17edfa0459f6c69e5b.mockapi.io/users",{
     Email: AddInfoUser.Email,
@@ -72,7 +75,6 @@ axios.post("https://64f37a17edfa0459f6c69e5b.mockapi.io/users",{
 })
 .then((res) => {
   console.log(res);
-  localStorage.setItem("Name" , AddInfoUser.Name)
 })
 .catch((err) =>{
   console.log(err);
