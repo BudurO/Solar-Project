@@ -62,7 +62,7 @@ function SignUp() {
     }else{
       const notify = () => toast.success("success");
       notify()  
-      seterrorMessage("/")    
+      seterrorMessage("")  
     }
 axios.post("https://64f37a17edfa0459f6c69e5b.mockapi.io/users",{
     Email: AddInfoUser.Email,
@@ -81,17 +81,17 @@ axios.post("https://64f37a17edfa0459f6c69e5b.mockapi.io/users",{
   }
   return (
     <>
-<div className="h-screen flex md:justify-center sm:justify-center">
+<div className="h-screen flex md:justify-center sm:justify-center sm:w-auto">
 {/* <img className='' src={Imglinegold} alt="" /> */}
-<div className="flex md:w-1/2 justify-center py-10 items-center bg-white lg:w-full">
+<div className="flex md:w-1/2 justify-center items-center bg-white lg:w-full m-auto p-0 ">
 <img className='absolute' src={Imglinegold} alt="" />
-    <div className="bg-white relative px-11 pt-4 bg-opacity-80 rounded-md">
+    <div className="bg-white relative md:px-11 lg:px-11 pt-4 bg-opacity-80 rounded-md">
 
       <p className="text-2xl text-gray-600 mb-11 font-semibold">Let’s get you started</p>
 
       <label className='ml-4' htmlFor="email">Email</label>
       <div className="flex items-center border-2 py-2 px-3 rounded-md mb-4">
-        <input className='outline-none w-full' type="email" name="email" id="email" placeholder="example@example.com"
+        <input className="outline-none lg:w-96 md:w-96 sm:w-auto" type="email" name="email" id="email" placeholder="example@example.com"
         onChange={(e) => {
           setAddInfoUser({...AddInfoUser,Email: e.target.value})
         }}  
@@ -100,7 +100,7 @@ axios.post("https://64f37a17edfa0459f6c69e5b.mockapi.io/users",{
 
       <label className='ml-4' htmlFor="">Name</label>
       <div className="flex items-center border-2 py-2 px-3 rounded-md mb-4">
-        <input className="outline-none w-full" type="text" name="" id="" placeholder="Enter your name"
+        <input className="outline-none lg:w-96 md:w-96 sm:w-auto" type="text" name="" id="" placeholder="Enter your name"
         onChange={(e) => {
           setAddInfoUser({...AddInfoUser,Name: e.target.value})
         }}  
@@ -108,9 +108,9 @@ axios.post("https://64f37a17edfa0459f6c69e5b.mockapi.io/users",{
       </div>
       <label className='ml-4' htmlFor="">Phone number</label>
       <div className="flex items-center border-2 py-2 px-3 rounded-md mb-4">
-        <img src={ImgFlagNumber} alt="" />
-        <img src={ImgArrow} alt="" />
-        <input className="outline-none w-full" type="text" name="text" id="text" placeholder="+966    505 444 6666"
+        <img className='sm:w-auto' src={ImgFlagNumber} alt="" />
+        <img className='sm:w-auto' src={ImgArrow} alt="" />
+        <input className="outline-none lg:w-96 md:w-96 sm:w-auto" type="text" name="text" id="text" placeholder="+966    505 444 6666"
         onChange={(e) => {
           setAddInfoUser({...AddInfoUser,PhoneNumber: e.target.value})
         }}  
@@ -119,7 +119,7 @@ axios.post("https://64f37a17edfa0459f6c69e5b.mockapi.io/users",{
 
       <label className='ml-4' htmlFor="">Create password</label>
       <div className="flex items-center border-2 py-2 px-3 rounded-md mb-4">
-        <input className="outline-none w-full px-72 pl-2" type="password" name="password" id="password" placeholder="Password" 
+        <input className="outline-none lg:w-96 md:w-96 sm:w-auto" type="password" name="password" id="password" placeholder="Password" 
         onChange={(e) => {
           setAddInfoUser({...AddInfoUser,Createpassword: e.target.value})
         }}  
