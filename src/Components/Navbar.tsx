@@ -31,7 +31,7 @@ function Navbar() {
       
   return (
     <>
-      <div className="min-h-full">
+      <div className="min-h-full mb-4">
         <Disclosure as="nav" className="bg-[#0C0A3E]">
           {({ open }) => (
             <>

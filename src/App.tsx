@@ -8,6 +8,7 @@ import HomePage from './Pages/HomePage'
 import RentingForm from './Pages/RentingForm'
 import RequestListAdmin from './Pages/RequestListAdmin'
 import Dashboard from './Pages/Dashboard'
+import PersonalInfo from './Pages/PersonalInfo'
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
     <Route path='/dashboard' element={<Dashboard/>}>
       {/* <Route path='/:id' element={<Dashboard/>}/> */}
     </Route>
+    <Route path='/userInfo' element={<PersonalInfo/>}/>
+
   </Routes>
 
   <Footer/>
