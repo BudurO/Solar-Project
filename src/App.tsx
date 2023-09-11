@@ -14,7 +14,6 @@ function App() {
   return (
     <>
     
-    <Navbar/>
 
 
   <Routes>
@@ -24,9 +23,8 @@ function App() {
     <Route path='/' element={<LogIn/>}/>
     <Route path='/rent' element={<RentingForm/>}/>
     <Route path='/RequestListAdmin' element={<RequestListAdmin/>}/>
-    <Route path='/dashboard' element={<Dashboard/>}>
-      {/* <Route path='/:id' element={<Dashboard/>}/> */}
-    </Route>
+    <Route path='/dashboard' element={<Dashboard/>}/>
+    {/* <Route path='/:id' element={<Dashboard/>}/> */}
     <Route path='/userInfo' element={<PersonalInfo/>}/>
 
   </Routes>

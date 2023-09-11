@@ -9,9 +9,11 @@ import lineVision0 from '../assets/lineVision0.png'
 import lineVision1 from '../assets/lineVision1.png'
 import Ellipse from '../assets/Ellipse .png'
 import contactUs from '../assets/contact-us.svg'
+import Navbar from '../Components/Navbar'
 function HomePage() {
   return (
     <>
+        <Navbar/>
     <div className='flex justify-center flex-col'>
     <img className='w-full h-full relative' src={HomePageImg} alt="" />
 

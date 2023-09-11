@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import Navbar from '../Components/Navbar'
 
 type IuserInfo = {
   Email: string,
@@ -84,6 +85,7 @@ axios.post("https://64f37a17edfa0459f6c69e5b.mockapi.io/users",{
   }
   return (
     <>
+            <Navbar/>
 <div className="h-screen flex md:justify-center sm:justify-center sm:w-auto">
 {/* <img className='' src={Imglinegold} alt="" /> */}
 <div className="flex md:w-1/2 justify-center items-center bg-white lg:w-full m-auto p-0 ">
