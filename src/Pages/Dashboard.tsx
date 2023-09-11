@@ -1,6 +1,5 @@
 import axios from 'axios';
 import Swal from 'sweetalert2'
-
 import React from 'react'
 type InfoRent={
     id?:string,
@@ -73,6 +72,8 @@ function Dashboard() {
           })
           
     }
+    const getName = localStorage.getItem("Name")
+
     return (
         <>
         <div className="flex flex-col h-screen bg-gray-100">
@@ -92,21 +93,37 @@ function Dashboard() {
                     </nav>
                 </div>
                 <div className="flex-1 p-4 lg:w-full md:w-1/2 ">
-                    <div className=" bg-white pb-4 shadow rounded-lg lg:w-full md:w-full w-auto">
-                        <table className="lg:w-full table-auto text-sm mb-4 md:w-1/2 w-[10]">
-                            <thead className='bg-yellow-200 rounded-t-lg lg:w-full md:w-full w-auto'>
+                    <div className=" bg-white pb-4 shadow rounded-lg lg:w-full md:w-full w-96">
+                        <table className="lg:w-full table-auto text-sm mb-4 md:w-full">
+                            <thead className='bg-yellow-200 rounded-t-lg lg:w-full md:w-72 '>
                                 <tr className="text-sm leading-normal w-[20vw] lg:w-full md:w-1/2">
-                                    <th className="py-2 px-4 bg-grey-lightest font-bold uppercase  text-[.4rem] text-grey-light border-b border-grey-light lg:text-sm md:text-sm">ID</th>
-                                    <th className="py-2 px-4 bg-grey-lightest font-bold uppercase text-[.4rem] text-grey-light border-b border-grey-light lg:text-sm md:text-sm ">House address</th>
-                                    <th className="py-2 px-4 bg-grey-lightest font-bold uppercase text-[.4rem] text-grey-light border-b border-grey-light lg:text-sm md:text-sm ">Status</th>
-                                    <th className="py-2 px-4 bg-grey-lightest font-bold uppercase text-[.4rem] text-grey-light border-b border-grey-light lg:text-sm md:text-sm ">Phone</th>
-                                    <th className="py-2 px-4 bg-grey-lightest font-bold uppercase text-[.4rem] text-grey-light border-b border-grey-light lg:text-sm md:text-sm ">Area of roof</th>
+                                    <th className="py-2 px-4 bg-grey-lightest font-bold uppercase  text-[.6rem] text-grey-light border-b border-grey-light lg:text-sm md:text-sm">ID</th>
+                                    <th className="py-2 px-4 bg-grey-lightest font-bold uppercase text-[.6rem] text-grey-light border-b border-grey-light lg:text-sm md:text-sm ">House address</th>
+                                    <th className="py-2 px-4 bg-grey-lightest font-bold uppercase text-[.6rem] text-grey-light border-b border-grey-light lg:text-sm md:text-sm ">Status</th>
+                                    <th className="py-2 px-4 bg-grey-lightest font-bold uppercase text-[.6rem] text-grey-light border-b border-grey-light lg:text-sm md:text-sm ">Phone</th>
+                                    <th className="py-2 px-4 bg-grey-lightest font-bold uppercase text-[.6rem] text-grey-light border-b border-grey-light lg:text-sm md:text-sm ">Area of roof</th>
                                     <th></th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody className=' border border-solid border-gray-300'>
                             
                                 {Info.map((item)=>{
+                                    if(item.Name==getName){
+                                        return(
+                                            <tr className="hover:bg-grey-lighter" key={item.id}>
+                                                <td className="py-2 px-4 border-b border-grey-light border border-dashed  rounded-full h-10 w-10 text-[.4rem] lg:text-sm md:text-sm">#{cunt++}</td>
+                                                <td className="py-2 px-4 border-b border-grey-light border-r text-[.6rem] lg:text-sm md:text-sm">{item.Locaiton.placeName}</td>
+                                                <td className="py-2 px-4 border-b border-grey-light border-r text-[.6rem] lg:text-sm md:text-sm">{item.State}</td>
+                                                <td className="py-2 px-4 border-b border-grey-light border-r text-[.6rem] lg:text-sm md:text-sm">{item.Number}</td>
+                                                <td className="py-2 px-4 border-b border-grey-light border-r text-[.6rem] lg:text-sm md:text-sm">{item.Area}<span className='ml-4'>m²</span></td>
+                                                <td className=" px-2 border-b border-grey-light">
+                                                    <button onClick={()=> deleteRent(String(item.id))} className="text-white bg-red-700  focus:ring-4 focus:ring-blue-300 font-medium text-[.6rem] lg:w-8 lg:h-7 w-6 h-5  text-center flex items-center justify-center rounded-lg ">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" className=" lg:w-4 lg:h-4 w-3 h-3 " viewBox="0 0 16 16"> <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/> <path fillRule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/> </svg>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        )
+                                    }
                                     return(
                                         <tr className="hover:bg-grey-lighter" key={item.id}>
                                             <td className="py-2 px-4 border-b border-grey-light border border-dashed  rounded-full h-10 w-10 text-[.4rem] lg:text-sm md:text-sm">#{cunt++}</td>
