@@ -132,7 +132,6 @@ function RentingForm() {
                     <label className='ml-4' htmlFor="">Phone number</label>
                     <div className="flex items-center border-2 py-2 px-3 rounded-md mb-4">
                         <input className="outline-none w-full" type="text" name="" id="" placeholder="0505 444 666" onChange={(e) => { setAddRent({...AddRent,Number: e.target.value}) }} />
-                        {/* <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16"> <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/> </svg> */}
                         
                     </div>
                     <span className='flex text-[#0C0A3E] text-xs ml-8' style={{color: "red"}}>{errorMessagelength}</span>
