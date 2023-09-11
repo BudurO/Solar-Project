@@ -64,15 +64,6 @@ function LogIn() {
               
             });
           };
-//             axios
-//     .post('https://64f37a17edfa0459f6c69e5b.mockapi.io/users', {
-//       Email: Email,
-//       Createpassword: Createpassword,
-//     })
-//     .catch((error) => {
-//       console.error('Error registering user:', error);
-//     });
-// };
      
   return (
     <>
