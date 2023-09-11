@@ -1,5 +1,6 @@
-import axios from 'axios';
+import axios from 'axios'
 import Swal from 'sweetalert2'
+// import 'sweetalert2/src/sweetalert2.scss'
 import React from 'react'
 type InfoRent={
     id:string,
@@ -19,53 +20,81 @@ function Dashboard() {
     },[])
     let cunt= 1;
     const deleteRent=(id:string)=>{
-        const swalWithBootstrapButtons = Swal.mixin({
-            customClass: {
-              confirmButton: 'btn btn-success',
-              cancelButton: 'btn btn-danger'
-            },
-            buttonsStyling: false
-          })
-          
-          swalWithBootstrapButtons.fire({
+        Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!',
-            cancelButtonText: 'No, cancel!',
-            reverseButtons: true
+            confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
                 axios.delete(`https://64f37a17edfa0459f6c69e5b.mockapi.io/Rent/${id}`)
-        .then((res)=>{
-            console.log(res)
-            setInfo(
-                Info.filter((del)=>{
-                    return del.id !== id;
-
-                }
-                )
-                )
-        })
-              swalWithBootstrapButtons.fire(
+                .then((res)=>{
+                    console.log(res)
+                    setInfo(
+                        Info.filter((del)=>{
+                            return del.id !== id;
+        
+                        }
+                        )
+                        )
+                })
+              Swal.fire(
                 'Deleted!',
                 'Your file has been deleted.',
                 'success'
               )
-            } else if (
-              /* Read more about handling dismissals below */
-              result.dismiss === Swal.DismissReason.cancel
-            ) {
-              swalWithBootstrapButtons.fire(
-                'Cancelled',
-                'Your imaginary file is safe :)',
-                'error'
-              )
             }
           })
+        // const swalWithBootstrapButtons = Swal.mixin({
+        //     customClass: {
+        //       confirmButton: 'btn btn-success',
+        //       cancelButton: 'btn btn-danger'
+        //     },
+        //     buttonsStyling: false
+        //   })
+          
+        //   swalWithBootstrapButtons.fire({
+        //     title: 'Are you sure?',
+        //     text: "You won't be able to revert this!",
+        //     icon: 'warning',
+        //     showCancelButton: true,
+        //     confirmButtonColor: '#3085d6',
+        //     cancelButtonColor: '#d33',
+        //     confirmButtonText: 'Yes, delete it!',
+        //     cancelButtonText: 'No, cancel!',
+        //     reverseButtons: true
+        //   }).then((result) => {
+        //     if (result.isConfirmed) {
+        //         axios.delete(`https://64f37a17edfa0459f6c69e5b.mockapi.io/Rent/${id}`)
+        // .then((res)=>{
+        //     console.log(res)
+        //     setInfo(
+        //         Info.filter((del)=>{
+        //             return del.id !== id;
+
+        //         }
+        //         )
+        //         )
+        // })
+        //       swalWithBootstrapButtons.fire(
+        //         'Deleted!',
+        //         'Your file has been deleted.',
+        //         'success'
+        //       )
+        //     } else if (
+        //       /* Read more about handling dismissals below */
+        //       result.dismiss === Swal.DismissReason.cancel
+        //     ) {
+        //       swalWithBootstrapButtons.fire(
+        //         'Cancelled',
+        //         'Your imaginary file is safe :)',
+        //         'error'
+        //       )
+        //     }
+        //   })
           
     }
     const getName = localStorage.getItem("Name")

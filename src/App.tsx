@@ -5,6 +5,7 @@ import Footer from './Components/Footer'
 import { Routes, Route } from "react-router-dom"
 import RentingForm from './Pages/RentingForm'
 import Dashboard from './Pages/Dashboard'
+import PersonalInfo from './Pages/PersonalInfo'
 
 function App() {
 
@@ -21,6 +22,8 @@ function App() {
     <Route path='/dashboard' element={<Dashboard/>}>
       {/* <Route path='/:id' element={<Dashboard/>}/> */}
     </Route>
+    <Route path='/userInfo' element={<PersonalInfo/>}/>
+
   </Routes>
 
   <Footer/>

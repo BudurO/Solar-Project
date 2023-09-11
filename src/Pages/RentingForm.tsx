@@ -21,9 +21,9 @@ type Rent = {
 function RentingForm() {
     /////////////////google map///////////////////////
     const mapStyles = {
-        height: "100vh",
         width: "100%"
     };
+    
     const defaultCenter: IsLocation = {
         lat: 24.713552,
         lng: 46.675297
@@ -118,10 +118,10 @@ function RentingForm() {
     }
     return (
         <>
-        <div className="h-screen flex md:justify-center sm:justify-center ">
+        <div className="h-screen flex lg:flex-row md:flex-row flex-col md:justify-center self-center ">
             <div className="flex md:w-1/2 justify-center  items-center bg-white lg:w-full  lg:ml-10 lg:flex-row sm:flex-col">
                 <img className='absolute' src={Imglinegold} alt="" />
-                <div className="bg-white relative px-11 pt-4 bg-opacity-80 rounded-md flex flex-col ml-9">
+                <div className="bg-white relative px-11 pt-4 bg-opacity-80 rounded-md flex flex-col ">
                     <p className="text-2xl text-gray-600 mb-11 font-semibold">Let's rent your roof.</p>
 
                     <label className='lg:ml-4' htmlFor="email">Area of roof</label>
@@ -138,7 +138,7 @@ function RentingForm() {
 
                     <label className='ml-4' htmlFor="">Locaiton</label>
                     <div className="flex items-center border-2 rounded-md mb-4 py-2 px-3">
-                        <input className="outline-none lg:w-96" type='text' value={placeName} placeholder="Locaiton"  />
+                        <input className="outline-none lg:w-96" type='text' defaultValue={placeName} placeholder="Locaiton"  />
                         <button className=' font-normal text-xs rounded-r flex justify-center items-center' onClick={handleLocationButtonClick}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className='w-5 h-5'>
                                 <path d="M176 256C176 211.8 211.8 176 256 176C300.2 176 336 211.8 336 256C336 300.2 300.2 336 256 336C211.8 336 176 300.2 176 256zM256 0C273.7 0 288 14.33 288 32V66.65C368.4 80.14 431.9 143.6 445.3 224H480C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H445.3C431.9 368.4 368.4 431.9 288 445.3V480C288 497.7 273.7 512 256 512C238.3 512 224 497.7 224 480V445.3C143.6 431.9 80.14 368.4 66.65 288H32C14.33 288 0 273.7 0 256C0 238.3 14.33 224 32 224H66.65C80.14 143.6 143.6 80.14 224 66.65V32C224 14.33 238.3 0 256 0zM128 256C128 326.7 185.3 384 256 384C326.7 384 384 326.7 384 256C384 185.3 326.7 128 256 128C185.3 128 128 185.3 128 256z"/>
@@ -146,7 +146,7 @@ function RentingForm() {
                         </button>
                     </div>
                     <div className='flex justify-center'>
-                        <button className="block text-center cursor-pointer	w-40 rounded-md bg-[#FFD35C] mt-4 py-2  text-[#0C0A3E] font-semibold mb-2 shadow-lg border-[1px]" onClick={AddRoof}>Submit</button>
+                        <button className="block text-center cursor-pointer	w-40 rounded-md bg-[#FFD35C] mt-4 py-2  text-[#0C0A3E] font-semibold mb-5 shadow-lg border-[1px]" onClick={AddRoof}>Submit</button>
                     </div>
                     <ToastContainer 
                     position = {"top-center"}
@@ -158,7 +158,8 @@ function RentingForm() {
                 </div>
             </div>
             {/* /////////////////google map/////////////////////// */}
-            <div className='lg:flex lg:w-full lg:justify-end '>
+
+            <div className='lg:w-full lg:h-full md:w-full md:h-full w-[20rem] h-80 flex self-center'>
             <LoadScript
                 googleMapsApiKey='AIzaSyDvVOxEFN68R3EuoM2vB2bKyy5sNsyURkI'>
                 
