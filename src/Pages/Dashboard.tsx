@@ -3,21 +3,25 @@ import Swal from 'sweetalert2'
 
 import React from 'react'
 type InfoRent={
-    id:string,
-    Area: string,
+    id?:string,
+    Area?: string,
     Locaiton:{placeName:string},
-    State:string,
-    Number:string,
-    Name:string,
+    State?:string,
+    Number?:string,
+    Name?:string,
 }
 function Dashboard() {
     const [Info, setInfo] = React.useState<InfoRent[]>([]);
+
+    
+
     React.useEffect(()=>{
         axios.get("https://64f37a17edfa0459f6c69e5b.mockapi.io/Rent")
     .then((res)=>{
         setInfo(res.data);
     }) 
     },[])
+    
     let cunt= 1;
     const deleteRent=(id:string)=>{
         const swalWithBootstrapButtons = Swal.mixin({
@@ -107,7 +111,9 @@ function Dashboard() {
                                         <tr className="hover:bg-grey-lighter" key={item.id}>
                                             <td className="py-2 px-4 border-b border-grey-light border border-dashed  rounded-full h-10 w-10 text-[.4rem] lg:text-sm md:text-sm">#{cunt++}</td>
                                             <td className="py-2 px-4 border-b border-grey-light border-r text-[.4rem] lg:text-sm md:text-sm">{item.Locaiton.placeName}</td>
-                                            <td className="py-2 px-4 border-b border-grey-light border-r text-[.4rem] lg:text-sm md:text-sm">{item.State}</td>
+                                            <td className="py-2 px-4 border-b border-grey-light border-r text-[.4rem] lg:text-sm md:text-sm">
+                                                {item.State}
+                                            </td>
                                             <td className="py-2 px-4 border-b border-grey-light border-r text-[.4rem] lg:text-sm md:text-sm">{item.Number}</td>
                                             <td className="py-2 px-4 border-b border-grey-light border-r text-[.4rem] lg:text-sm md:text-sm">{item.Area}</td>
                                             <td className="py-2 px-4 border-b border-grey-light">

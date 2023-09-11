@@ -1,37 +1,49 @@
 import axios from 'axios';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 type InfoRent={
-    id:string,
-    Area: string,
-    Locaiton:{placeName:string},
+    id?:string,
+    Area?: string,
+    Locaiton?:{placeName:string},
     State:string,
-    Number:string,
-    Name:string,
+    Number?:string,
+    Name?:string,
+    Underprocess?:string,
+    Approved?:string,
+    Rejected?:string
 }
 function RequestListAdmin() {
     const [Info, getInfo] = React.useState<InfoRent[]>([]);
-    // const [UnderProcess,setUnderProcess] = React.useState<InfoRent[]>([]);
-    // const [Approved,setApproved] = React.useState<InfoRent[]>([]);
-    // const [Rejected,setRejected] = React.useState<InfoRent[]>([]);
-    //  const [Statess,setState] = React.useState("New");
-    //  const [allState,setallState] = React.useState([])
-    const States: InfoRent[] = [
-        {   State: 'UnderProcess' },
-        {   State: 'Approved' },
-        {   State: 'Rejected' },
-        // Add more states as needed
-      ];
+
+    const [MyState,setMyState] = React.useState<InfoRent>({
+        State: "New",
+        Underprocess:"Underprocess",
+        Approved:"Approved",
+        Rejected:"Rejected",
+    });
+
     React.useEffect(()=>{
         axios.get("https://64f37a17edfa0459f6c69e5b.mockapi.io/Rent")
     .then((res)=>{
         getInfo(res.data);
     }) 
-    },[])
+    },[]);
+    
     let cunt= 1;
-   React.useEffect(() => {
-    // States(localStorage.getItem("id"))
-   },[])
+
+    const nav = useNavigate();
+    const newState = localStorage.getItem("id");
+    const UpdateState = () => {
+        
+        axios.put(`https://64f37a17edfa0459f6c69e5b.mockapi.io/Rent/${newState}`,{
+            State:MyState.State
+        })
+        .then(() => {
+        nav("/RequestListAdmin")
+        })
+    }
+    
   return (
     <>
  <div className="flex flex-col h-screen bg-gray-100">
@@ -41,9 +53,6 @@ function RequestListAdmin() {
                     <nav>
                         <a className="block text-gray-500 py-2.5 px-4 my-4 rounded transition duration-200">
                             <i className="fas fa-home mr-2"></i>Profile
-                        </a>
-                        <a className="block text-gray-500 py-2.5 px-4 my-4 rounded transition duration-200  hover:bg-white  hover:text-[#0C0A3E]" href="#">
-                            <i className="fas fa-file-alt mr-2"></i>Personal information
                         </a>
                         <a className="block  py-2.5 px-4 my-4 rounded transition duration-200  bg-white text-[#0C0A3E]" href="#">
                             <i className="fas fa-users mr-2"></i>Request history
@@ -70,20 +79,28 @@ function RequestListAdmin() {
                                         <tr className="hover:bg-grey-lighter" key={item.id}>
                                             <td className="py-2 px-4 border-b border-grey-light border border-dashed  rounded-full h-10 w-10 text-[.4rem] lg:text-sm md:text-sm">#{cunt++}</td>
                                             <td className="py-2 px-4 border-b border-grey-light border-r text-[.4rem] lg:text-sm md:text-sm">{item.Locaiton.placeName}</td>
-                                            <select>
-                                            {States.map((state) => (
-                                                <option key={state.id} value={state.State}>
-                                                {state.State}
-                                                </option>
-                                            ))}
-                                                </select>
+                                            <td className="py-2 px-4 border-b border-grey-light border-r text-[.4rem] lg:text-sm md:text-sm">
+                                           
+                                            
+                                             <select name="" id="" onClick={()=>{localStorage.setItem("id",String(item.id));UpdateState()}} onChange={e => {
+                                                    setMyState({...MyState,State: e.target.value})
+                                                }}>
+                                                <option onClick={()=>{localStorage.setItem("id",String(item.State))}}>{MyState.State}</option>
+                                                <option  onClick={()=>{localStorage.setItem("id",String(item.State))}} value={MyState.Underprocess}>{MyState.Underprocess}</option>
+                                                
+                                                <option  onClick={()=>{localStorage.setItem("id",String(item.State))}} value={MyState.Approved}>{MyState.Approved}</option>
+                                                
+                                                <option 
+                                                
+                                                 onClick={()=>{localStorage.setItem("id",String(item.State))}} value={MyState.Rejected}>{MyState.Rejected}</option>
+                                             </select>
+                                             
+                                                </td>
                                             <td className="py-2 px-4 border-b border-grey-light border-r text-[.4rem] lg:text-sm md:text-sm">{item.Number}</td>
                                             <td className="py-2 px-4 border-b border-grey-light border-r text-[.4rem] lg:text-sm md:text-sm">{item.Area}</td>
                                         </tr>
                                     )
                                 })}
-                                
-                                
                                 
                             </tbody>
                         </table>
