@@ -1,5 +1,5 @@
 import SingnUp from './Pages/SignUp'
-import Navbar from './Components/Navbar'
+import Navbar from './Components/NavbarHome'
 import './App.css'
 import Footer from './Components/Footer'
 import { Routes, Route } from "react-router-dom"

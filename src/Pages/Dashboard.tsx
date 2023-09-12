@@ -2,6 +2,7 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 // import 'sweetalert2/src/sweetalert2.scss'
 import React from 'react'
+import Navbar from '../Components/Navbar';
 type InfoRent={
     id?:string,
     Area?: string,
@@ -58,6 +59,7 @@ function Dashboard() {
 
     return (
         <>
+        <Navbar/>
         <div className="flex flex-col h-screen bg-gray-100">
             <div className="bg-white w-full h-1"></div>
             <div className="flex-1 flex flex-wrap">

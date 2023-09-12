@@ -10,7 +10,8 @@ import { useNavigate } from 'react-router-dom'
 type IuserLogIn = {
     id:string,
     Email:string,
-    Createpassword:string
+    Createpassword:string,
+    Name:string
   }
 
 function LogIn() {
@@ -20,6 +21,7 @@ function LogIn() {
             id: "",
             Email: "",
             Createpassword:"",
+            Name:"",
           }); 
 
         const [LogInUserO,setLogInUser] = React.useState<IuserLogIn[]>([]); 
@@ -46,7 +48,7 @@ function LogIn() {
           }
             axios.get("https://64f37a17edfa0459f6c69e5b.mockapi.io/users")
             .then((res) => {
-                  const LonInUser = res.data.filter((cheek : string) => {
+                  const LonInUser = res.data.find((cheek:IuserLogIn) => {
                      return cheek.Email === AddInfoUser.Email && cheek.Createpassword === AddInfoUser.Createpassword
                   });
                   if (LonInUser.length === 0){
@@ -55,7 +57,9 @@ function LogIn() {
                     navigate('/')
                   }else{
                     const notify = () => toast.success("s");
-                    notify()  
+                    notify() 
+                    localStorage.setItem("isLogin","true") 
+                    localStorage.setItem("Name",LonInUser.Name)
                     navigate('/dashboard')
                   }
             })
