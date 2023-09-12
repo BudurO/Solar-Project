@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 function Navbar() {
     
       const nav = useNavigate();
+
       const userNavigation = [
         
         { name: 'Log In', href: '/' },
@@ -24,6 +25,7 @@ function Navbar() {
     <>
 
       <div className="min-h-full mb-4">
+
         <Disclosure as="nav" className="bg-[#0C0A3E]">
           {({ open }) => (
             <>

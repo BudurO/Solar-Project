@@ -6,12 +6,13 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import Navbar from '../Components/Navbar';
 
 type IuserLogIn = {
     id:string,
+    Name: string,
     Email:string,
     Createpassword:string,
-    Name:string
   }
 
 function LogIn() {
@@ -22,6 +23,7 @@ function LogIn() {
             Email: "",
             Createpassword:"",
             Name:"",
+
           }); 
 
         const [LogInUserO,setLogInUser] = React.useState<IuserLogIn[]>([]); 
@@ -55,11 +57,17 @@ function LogIn() {
                     const notify = () => toast.warn("Invalid");
                     notify()  
                     navigate('/')
+                  }else if(AddInfoUser.Email === "Admin@gmail.com" && AddInfoUser.Createpassword === "AdminAdmin%%%%%%%"){
+                    const notify = () => toast.success("success Admin");
+                    notify()  
+                    navigate('/RequestListAdmin')
                   }else{
-                    const notify = () => toast.success("s");
-                    notify() 
+                    // const notify = () => toast.success("s");
+                    // notify() 
                     localStorage.setItem("isLogin","true") 
                     localStorage.setItem("Name",LonInUser.Name)
+                    const notify = () => toast.success(`success${AddInfoUser.Name}`);
+                    notify()  
                     navigate('/dashboard')
                   }
             })
@@ -71,6 +79,7 @@ function LogIn() {
      
   return (
     <>
+        <Navbar/>
     <div className="h-screen flex md:justify-center sm:justify-center">
 {/* <img className='' src={Imglinegold} alt="" /> */}
 <div className="flex md:w-1/2 justify-center py-10 items-center bg-white lg:w-full m-auto">
