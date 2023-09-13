@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom'
 import UserSide from '../Components/UserSide'
 import User from '../Components/User'
 function PersonalInfo() {
@@ -9,10 +8,9 @@ function PersonalInfo() {
         
         // React.useEffect(()=>UpdateInfo(getId),[])
         localStorage.setItem("Page","userInfo")
-        const nav = useNavigate();
     const isLogin = localStorage.getItem("isLogin")
     if(isLogin!="true"){
-        return nav("/")
+        location.href="/"
     }
     return (
         <>

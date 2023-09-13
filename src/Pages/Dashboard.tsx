@@ -3,17 +3,15 @@ import Swal from 'sweetalert2'
 // import 'sweetalert2/src/sweetalert2.scss'
 import React from 'react'
 import Navbar from '../Components/Navbar';
-import { useNavigate } from 'react-router-dom';
 import UserRequest from '../Components/UserRequest';
 import UserSide from '../Components/UserSide';
 
 function Dashboard() {
 
-    const nav = useNavigate();
     const isLogin = localStorage.getItem("isLogin")
     // isLogin=="true"?:nav("/")
     if(isLogin!="true"){
-        return nav("/")
+        location.href="/"
     }
     localStorage.setItem("Page","dashboard")
 

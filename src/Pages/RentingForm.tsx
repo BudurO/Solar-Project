@@ -118,7 +118,7 @@ function RentingForm() {
     }
     const isLogin = localStorage.getItem("isLogin")
     if(isLogin!="true"){
-        return nav("/")
+        location.href="/"    
     }
     return (
         <>

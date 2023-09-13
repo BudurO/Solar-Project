@@ -41,7 +41,11 @@ function RequestListAdmin() {
         nav("/RequestListAdmin");
       });
   };
+  const isLogin = localStorage.getItem("isLogin")
 
+  if(isLogin!="true"){
+    location.href="/"
+}
   return (
     <>
       <div className="flex flex-col h-screen bg-gray-100">
