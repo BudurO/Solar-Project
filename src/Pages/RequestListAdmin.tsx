@@ -18,22 +18,8 @@ function RequestListAdmin() {
 
   const [MyState, setMyState] = React.useState<InfoRent>({
     State: "New",
-    // Underprocess: "Underprocess",
-    // Approved: "Approved",
-    // Rejected: "Rejected",
   });
 
-  // const ChangeState = () =>{
-  //   if(MyState.State == "New"){
-  //     return "New"
-  //   }else if (MyState.State == "Underprocess"){
-  //     return "Underprocess"
-  //   } else if (MyState.State == "Approved"){
-  //     return "Approved"
-  //   } else if (MyState.State == "Rejected"){
-  //     return "Rejected"
-  //   }
-  // };
   React.useEffect(() => {
     axios
       .get("https://64f37a17edfa0459f6c69e5b.mockapi.io/Rent")
