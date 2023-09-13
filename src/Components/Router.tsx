@@ -12,9 +12,9 @@ function Router() {
 
   <Routes>
     {/* <Route path="/" element={ "" }/> */}
-    <Route path='/HomePage' element={<HomePage/>}/>
+    <Route path='/' element={<HomePage/>}/>
     <Route path="/SingnUp" element={ <SingnUp/> }/>
-    <Route path='/' element={<LogIn/>}/>
+    <Route path='/login' element={<LogIn/>}/>
     <Route path='/rent' element={<RentingForm/>}/>
     <Route path='/RequestListAdmin' element={<RequestListAdmin/>}/>
     <Route path='/dashboard' element={<Dashboard/>}/>

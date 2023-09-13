@@ -6,6 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import Navbar from '../Components/Navbar';
 
 type Rent = {
     Area: string,
@@ -118,10 +119,11 @@ function RentingForm() {
     }
     const isLogin = localStorage.getItem("isLogin")
     if(isLogin!="true"){
-        location.href="/"    
+        location.href="/login"    
     }
     return (
         <>
+        <Navbar/>
         <div className="h-screen flex lg:flex-row md:flex-row flex-col md:justify-center self-center ">
             <div className="flex md:w-1/2 justify-center  items-center bg-white lg:w-full  lg:ml-10 lg:flex-row sm:flex-col">
                 <img className='absolute' src={Imglinegold} alt="" />

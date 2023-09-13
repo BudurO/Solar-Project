@@ -76,7 +76,7 @@ axios.post("https://64f37a17edfa0459f6c69e5b.mockapi.io/users",{
 })
 .then((res) => {
   console.log(res);
-  return navigate('/')    
+  return navigate('/login')    
 })
 .catch((err) =>{
   console.log(err);

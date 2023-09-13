@@ -20,7 +20,7 @@ function Navbar() {
       const getName= localStorage.getItem("Name")
       const LogOut=()=>{
         localStorage.setItem("isLogin","false")
-        nav("/")
+        nav("/login")
       }
     //   const LogOutAdmin = ()=>{
     //     localStorage.setItem("isLoginAdmin","false")
@@ -38,7 +38,7 @@ function Navbar() {
                 <div className="flex h-16 items-center justify-between">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
-                     <a href='/HomePage'> <img
+                     <a href='/'> <img
                         className="h-11"
                         src={ImgLogoNavbar}
                         alt="Solar"
@@ -63,7 +63,7 @@ function Navbar() {
                             <div className=' text-[#FEB221] font-medium underline underline-offset-2 ml-3'>
                                 <a href="/dashboard">{getName}</a>
                             </div>
-                            </div>:<a className='ml-4 bg-white px-3 py-2 rounded-md' href='/'>Login</a>}
+                            </div>:<a className='ml-4 bg-white px-3 py-2 rounded-md' href='/login'>Login</a>}
                             {isLogin=="true"?<a className='ml-4 bg-white px-3 py-2 rounded-md' onClick={LogOut}>Logout</a>:<a className='ml-10 bg-white px-3 py-2 rounded-md' href='/SingnUp'>Sign Up</a>}
                             {/* {isLoginAdmin=="true"?<div className='flex justify-between '>
                                 <div className='ml-3'>
@@ -143,7 +143,7 @@ function Navbar() {
                       <div className="text-base font-medium leading-none text-white">{user.name}</div>
                       <div className="text-sm font-medium leading-none text-gray-400">{user.email}</div>
                     </div> */}
-                      {isLogin=="true"?<a className='relative  flex-shrink-0 rounded-full  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white' onClick={LogOut}>Logout</a>:<a className='relative flex-shrink-0 rounded-full  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white' href='/'>Login</a>}
+                      {isLogin=="true"?<a className='relative  flex-shrink-0 rounded-full  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white' onClick={LogOut}>Logout</a>:<a className='relative flex-shrink-0 rounded-full  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white' href='/login'>Login</a>}
 
                     
                   </div>

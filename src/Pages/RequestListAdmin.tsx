@@ -44,7 +44,7 @@ function RequestListAdmin() {
   const isLogin = localStorage.getItem("isLogin")
 
   if(isLogin!="true"){
-    location.href="/"
+    location.href="/login"
 }
   return (
     <>

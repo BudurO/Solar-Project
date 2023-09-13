@@ -1,5 +1,6 @@
 import UserSide from '../Components/UserSide'
 import User from '../Components/User'
+import Navbar from '../Components/Navbar'
 function PersonalInfo() {
     
     
@@ -10,10 +11,11 @@ function PersonalInfo() {
         localStorage.setItem("Page","userInfo")
     const isLogin = localStorage.getItem("isLogin")
     if(isLogin!="true"){
-        location.href="/"
+        location.href="/login"
     }
     return (
         <>
+        <Navbar/>
         <div className="flex flex-col h-screen bg-gray-100">
                 <div className="bg-white w-full h-1"></div>
                 <div className="flex-1 flex flex-wrap">

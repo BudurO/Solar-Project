@@ -8,7 +8,7 @@ function Dashboard() {
     const isLogin = localStorage.getItem("isLogin")
     // isLogin=="true"?:nav("/")
     if(isLogin!="true"){
-        location.href="/"
+        location.href="/login"
     }
     localStorage.setItem("Page","dashboard")
 

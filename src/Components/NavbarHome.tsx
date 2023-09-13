@@ -10,7 +10,7 @@ function NavbarHome() {
     //       'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     //   }
       const navigation = [
-        { name: 'Home', href: '/HomePage', current: true },
+        { name: 'Home', href: '/', current: true },
         { name: 'Our Vision', href: '#OurVision', current: false },
         { name: 'Contact us', href: '#contactUs', current: false },
         { name: 'Service', href: '#Service', current: false },
@@ -33,7 +33,7 @@ function NavbarHome() {
       const getName= localStorage.getItem("Name")
       const LogOut=()=>{
         localStorage.setItem("isLogin","false")
-        nav("/")
+        nav("/login")
       }
       // const LogOutAdmin = ()=>{
       //   localStorage.setItem("isLoginAdmin","false")
@@ -49,7 +49,7 @@ function NavbarHome() {
                 <div className="flex h-16 items-center justify-between">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
-                     <a href='/HomePage'> <img
+                     <a href='/'> <img
                         className="h-11"
                         src={ImgLogoNavbar}
                         alt="Solar"
@@ -93,7 +93,7 @@ function NavbarHome() {
                             <div className=' text-[#FEB221] font-medium underline underline-offset-2 ml-3'>
                               <a href="/dashboard">{getName}</a>
                             </div>
-                            </div>:<a className='ml-4 bg-white px-3 py-2 rounded-md text-sm lg:text-lg xl:text-lg md:text-sm' href='/'>Login</a>}
+                            </div>:<a className='ml-4 bg-white px-3 py-2 rounded-md text-sm lg:text-lg xl:text-lg md:text-sm' href='/login'>Login</a>}
                             {isLogin=="true"?<a className='ml-6 bg-white px-3 py-2 rounded-md text-sm lg:text-lg xl:text-lg md:text-sm' onClick={LogOut}>Logout</a>:<a className='ml-10 bg-white px-3 py-2 rounded-md' href='/SingnUp'>Sign Up</a>}
                             {/* {isLoginAdmin=="true"?<div className='flex justify-between '>
                                 <div className='ml-3'>
@@ -162,7 +162,7 @@ function NavbarHome() {
                 <div className="border-t border-gray-700 pb-3 pt-4">
                   <div className="flex items-center px-5">
 
-                  {isLogin=="true"?<a className='relative  flex-shrink-0 rounded-full  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white' onClick={LogOut}>Logout</a>:<a className='relative flex-shrink-0 rounded-full  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white' href='/'>Login</a>}
+                  {isLogin=="true"?<a className='relative  flex-shrink-0 rounded-full  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white' onClick={LogOut}>Logout</a>:<a className='relative flex-shrink-0 rounded-full  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white' href='/login'>Login</a>}
 
                     {/* <div>
                       <a className='relative ml-auto flex-shrink-0 rounded-full  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white' href='/'>Login</a>

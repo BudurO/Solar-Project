@@ -33,20 +33,20 @@ function LogIn() {
           if(AddInfoUser.Email == "" && AddInfoUser.Email.length < 8){
             const notify = () => toast.warning("Enter your Email");
             notify()
-            return navigate('/') 
+            return navigate('/login') 
           }else if (!AddInfoUser.Email.includes('@')){
             seterrorMessage("Email must contain at least one symbol e.g. @ .")
           }else if (AddInfoUser.Createpassword == "" ){
             const notify = () => toast.warning("Enter your password");
             notify()
-            return navigate('/')    
+            return navigate('/login')    
           }else if (AddInfoUser.Createpassword.length < 8){
             seterrorMessage("Password must contain a minimum of 8 characters")
-            return navigate('/')    
+            return navigate('/login')    
           }
           else if (!AddInfoUser.Createpassword.includes('@') && !AddInfoUser.Createpassword.includes('!') && !AddInfoUser.Createpassword.includes('#') && !AddInfoUser.Createpassword.includes('$') && !AddInfoUser.Createpassword.includes('&') && !AddInfoUser.Createpassword.includes('*') && !AddInfoUser.Createpassword.includes('%')){
             seterrorMessage("Password must contain at least one symbol e.g. @, !")
-            return navigate('/')    
+            return navigate('/login')    
           }
             axios.get("https://64f37a17edfa0459f6c69e5b.mockapi.io/users")
             .then((res) => {
@@ -56,7 +56,7 @@ function LogIn() {
                   if (LonInUser.length === 0){
                     const notify = () => toast.warn("Invalid");
                     notify()  
-                    navigate('/')
+                    navigate('/login')
                   }else if(AddInfoUser.Email === "Admin@gmail.com" && AddInfoUser.Createpassword === "AdminAdmin%%%%%%%"){
                     localStorage.setItem("isLogin","true") 
                     localStorage.setItem("Name","Admin")
@@ -71,7 +71,7 @@ function LogIn() {
                     localStorage.setItem("id",LonInUser.id)
                     const notify = () => toast.success(`success${AddInfoUser.Name}`);
                     notify()  
-                    navigate('/HomePage')
+                    navigate('/')
                   }
             })
             .catch((error) =>{
