@@ -116,6 +116,10 @@ function RentingForm() {
             console.log(err);
         })
     }
+    const isLogin = localStorage.getItem("isLogin")
+    if(isLogin!="true"){
+        return nav("/")
+    }
     return (
         <>
         <div className="h-screen flex lg:flex-row md:flex-row flex-col md:justify-center self-center ">

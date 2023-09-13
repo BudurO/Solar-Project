@@ -58,6 +58,8 @@ function LogIn() {
                     notify()  
                     navigate('/')
                   }else if(AddInfoUser.Email === "Admin@gmail.com" && AddInfoUser.Createpassword === "AdminAdmin%%%%%%%"){
+                    localStorage.setItem("isLogin","true") 
+                    localStorage.setItem("Name","Admin")
                     const notify = () => toast.success("success Admin");
                     notify()  
                     navigate('/RequestListAdmin')
@@ -66,9 +68,10 @@ function LogIn() {
                     // notify() 
                     localStorage.setItem("isLogin","true") 
                     localStorage.setItem("Name",LonInUser.Name)
+                    localStorage.setItem("id",LonInUser.id)
                     const notify = () => toast.success(`success${AddInfoUser.Name}`);
                     notify()  
-                    navigate('/dashboard')
+                    navigate('/HomePage')
                   }
             })
             .catch((error) =>{
