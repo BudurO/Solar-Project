@@ -29,12 +29,12 @@ function Navbar() {
   return (
     <>
 
-      <div className="min-h-full mb-4">
+      <div className="min-h-full">
 
-        <Disclosure as="nav" className="bg-[#0C0A3E]">
+        <Disclosure as="nav" className="bg-[#0C0A3E] lg:h-20 lg:pt-2">
           {({ open }) => (
             <>
-              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
                 <div className="flex h-16 items-center justify-between">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
@@ -95,7 +95,7 @@ function Navbar() {
                   </div>
                 </div>
               </div>
-              <Disclosure.Panel className="md:hidden">
+              <Disclosure.Panel className="md:hidden bg-[#0C0A3E]">
                 <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
                   
                 </div>

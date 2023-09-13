@@ -1,7 +1,8 @@
 import axios from "axios";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 type InfoRent = {
   id?: string;
   Area?: string;
@@ -48,6 +49,7 @@ function RequestListAdmin() {
 }
   return (
     <>
+            <Navbar/>
       <div className="flex flex-col h-screen bg-gray-100">
         <div className="bg-white w-full h-1"></div>
         <div className="flex-1 flex flex-wrap">
@@ -67,7 +69,7 @@ function RequestListAdmin() {
           <div className="flex-1 p-4 lg:w-full md:w-1/2 ">
             <div className=" bg-white pb-4 shadow rounded-lg lg:w-full md:w-full w-auto">
               <table className="lg:w-full table-auto text-sm mb-4 md:w-1/2 w-[10]">
-                <thead className="bg-yellow-200 rounded-t-lg lg:w-full md:w-full w-auto">
+                <thead className="bg-yellow-200 rounded-t-lg lg:w-full md:w-full w-auto h-14 pt-2">
                   <tr className="text-sm leading-normal w-[20vw] lg:w-full md:w-1/2">
                     <th className="py-2 px-4 bg-grey-lightest font-bold uppercase  text-[.4rem] text-grey-light border-b border-grey-light lg:text-sm md:text-sm">
                       ID
@@ -91,7 +93,7 @@ function RequestListAdmin() {
                   {Info.map((item) => {
                     return (
                       <tr className="hover:bg-grey-lighter" key={item.id}>
-                        <td className="py-2 px-4 border-b border-grey-light border border-dashed  rounded-full h-10 w-10 text-[.4rem] lg:text-sm md:text-sm">
+                        <td className="py-2 px-4 border-b border-grey-light border border-dashed  rounded-full w-10 text-[.4rem] lg:text-sm md:text-sm h-14 pt-2">
                           #{cunt++}
                         </td>
                         <td className="py-2 px-4 border-b border-grey-light border-r text-[.4rem] lg:text-sm md:text-sm">
@@ -99,13 +101,12 @@ function RequestListAdmin() {
                         </td>
                         <td className="py-2 px-4 border-b border-grey-light border-r text-[.4rem] lg:text-sm md:text-sm">
                           <select
+                          className=" border border-solid border-gray-300 rounded-md shadow-md h-9"
                             name=""
                             id=""
                             onClick={() => {
                               localStorage.setItem("id", String(item.id));
-                              UpdateState();
-                              console.log(MyState);
-                              
+                              UpdateState();                              
                             }}
                             onChange={(e) => {
                               setMyState({ ...MyState, State: e.target.value });

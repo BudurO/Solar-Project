@@ -8,9 +8,11 @@ import RequestListAdmin from '../Pages/RequestListAdmin'
 import Dashboard from '../Pages/Dashboard'
 import PersonalInfo from '../Pages/PersonalInfo'
 import Footer from '../Components/Footer'
+import NavbarHome from './NavbarHome'
 function Router() {
   return (
     <>
+
  <Routes>
     {/* <Route path="/" element={ "" }/> */}
     <Route path='/HomePage' element={<HomePage/>}/>
@@ -23,7 +25,6 @@ function Router() {
     <Route path='/userInfo' element={<PersonalInfo/>}/>
 
   </Routes>
-  <Footer/>
 
     </>
   )

@@ -43,10 +43,10 @@ function NavbarHome() {
   return (
     <>
       <div className="min-h-full">
-        <Disclosure as="nav" className="bg-[#0C0A3E]">
+        <Disclosure as="nav" className="bg-[#0C0A3E] lg:h-20 lg:pt-2">
           {({ open }) => (
             <>
-              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="mx-auto  px-4 sm:px-6 lg:px-4 xl:px-4 md:px-4">
                 <div className="flex h-16 items-center justify-between">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
@@ -64,9 +64,9 @@ function NavbarHome() {
                             href={item.href}
                             className={classNames(
                               item.current
-                                ? 'bg-bg-white text-white'
-                                : 'text-gray-300 hover:bg-bg-white hover:text-white',
-                              'rounded-md px-3 py-2 text-sm font-medium'
+                                ? 'bg-bg-white text-white text-sm font-medium lg:text-lg xl:text-2xl md:text-sm sm:text-sm'
+                                : 'text-gray-300 hover:bg-bg-white hover:text-white text-sm font-medium lg:text-lg xl:text-2xl md:text-sm sm:text-sm',
+                              'rounded-md px-3 py-2'
                             )}
                             aria-current={item.current ? 'page' : undefined}
                           >
@@ -94,8 +94,8 @@ function NavbarHome() {
                             <div className=' text-[#FEB221] font-medium underline underline-offset-2 ml-3'>
                               <a href="/dashboard">{getName}</a>
                             </div>
-                            </div>:<a className='ml-4 bg-white px-3 py-2 rounded-md' href='/'>Login</a>}
-                            {isLogin=="true"?<a className='ml-4 bg-white px-3 py-2 rounded-md' onClick={LogOut}>Logout</a>:<a className='ml-10 bg-white px-3 py-2 rounded-md' href='/SingnUp'>Sign Up</a>}
+                            </div>:<a className='ml-4 bg-white px-3 py-2 rounded-md text-sm lg:text-lg xl:text-2xl' href='/'>Login</a>}
+                            {isLogin=="true"?<a className='ml-4 bg-white px-3 py-2 rounded-md text-sm lg:text-lg xl:text-xl' onClick={LogOut}>Logout</a>:<a className='ml-10 bg-white px-3 py-2 rounded-md' href='/SingnUp'>Sign Up</a>}
                             {/* {isLoginAdmin=="true"?<div className='flex justify-between '>
                                 <div className='ml-3'>
                                     <svg style={{color: "white"}} xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-person-circle" viewBox="0 0 16 16"> <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" fill="white"></path> <path fillRule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" fill="white"></path> </svg>
@@ -110,7 +110,7 @@ function NavbarHome() {
                       </Menu>
                     </div>
                   </div>
-                  <div className="-mr-2 flex md:hidden">
+                  <div className="-mr-2 flex md:hidden z-50">
                     {/* Mobile menu button */}
                     <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="absolute -inset-0.5" />
@@ -125,7 +125,7 @@ function NavbarHome() {
                 </div>
               </div>
 
-              <Disclosure.Panel className="md:hidden">
+              <Disclosure.Panel className="md:hidden bg-[#0C0A3E]">
                 <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
                   {navigation.map((item) => (
                     <Disclosure.Button
@@ -144,13 +144,7 @@ function NavbarHome() {
                 </div>
                 <div className="border-t border-gray-700 pb-3 pt-4">
                   <div className="flex items-center px-5">
-                    {/* <div className="flex-shrink-0">
-                    <img className="h-8 w-8 rounded-full" src={ImgeUser} alt="" />
-                    </div>
-                    <div className="ml-3">
-                      <div className="text-base font-medium leading-none text-white">{user.name}</div>
-                      <div className="text-sm font-medium leading-none text-gray-400">{user.email}</div>
-                    </div> */}
+                    
                     <div>
                       <a className='relative ml-auto flex-shrink-0 rounded-full  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white' href='/SingnUp'>Sign Up</a>
                     </div>
@@ -161,29 +155,12 @@ function NavbarHome() {
                     </button>
                   </div>
                   
-                  {/* <div className="mt-3 space-y-1 px-2">
-                    {userNavigation.map((item) => (
-                      <Disclosure.Button
-                        key={item.name}
-                        as="a"
-                        href={item.href}
-                        className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
-                      >
-                        {item.name}
-                      </Disclosure.Button>
-                    ))}
-                  </div> */}
+                  
                 </div>
 
                 <div className="border-t border-gray-700 pb-3 pt-4">
                   <div className="flex items-center px-5">
-                    {/* <div className="flex-shrink-0">
-                    <img className="h-8 w-8 rounded-full" src={ImgeUser} alt="" />
-                    </div>
-                    <div className="ml-3">
-                      <div className="text-base font-medium leading-none text-white">{user.name}</div>
-                      <div className="text-sm font-medium leading-none text-gray-400">{user.email}</div>
-                    </div> */}
+                    
                     <div>
                       <a className='relative ml-auto flex-shrink-0 rounded-full  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white' href='/'>Login</a>
                     </div>
@@ -193,19 +170,6 @@ function NavbarHome() {
                     >
                     </button>
                   </div>
-                  
-                  {/* <div className="mt-3 space-y-1 px-2">
-                    {userNavigation.map((item) => (
-                      <Disclosure.Button
-                        key={item.name}
-                        as="a"
-                        href={item.href}
-                        className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
-                      >
-                        {item.name}
-                      </Disclosure.Button>
-                    ))}
-                  </div> */}
                 </div>
               </Disclosure.Panel>
             </>
