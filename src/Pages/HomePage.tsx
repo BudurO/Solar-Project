@@ -9,7 +9,7 @@ import lineVision0 from '../assets/lineVision0.png'
 import lineVision1 from '../assets/lineVision1.png'
 import Ellipse from '../assets/Ellipse .png'
 import contactUs from '../assets/contact-us.svg'
-import Navbar from '../Components/Navbar'
+import Navbar from '../Components/NavbarHome'
 function HomePage() {
   return (
     <>

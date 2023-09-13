@@ -12,7 +12,7 @@ type IuserLogIn = {
     id:string,
     Name: string,
     Email:string,
-    Createpassword:string
+    Createpassword:string,
   }
 
 function LogIn() {
@@ -22,7 +22,8 @@ function LogIn() {
             id: "",
             Email: "",
             Createpassword:"",
-            Name: ""
+            Name:"",
+
           }); 
 
         const [LogInUserO,setLogInUser] = React.useState<IuserLogIn[]>([]); 
@@ -49,7 +50,7 @@ function LogIn() {
           }
             axios.get("https://64f37a17edfa0459f6c69e5b.mockapi.io/users")
             .then((res) => {
-                  const LonInUser = res.data.filter((cheek : string) => {
+                  const LonInUser = res.data.find((cheek:IuserLogIn) => {
                      return cheek.Email === AddInfoUser.Email && cheek.Createpassword === AddInfoUser.Createpassword
                   });
                   if (LonInUser.length === 0){
@@ -57,13 +58,20 @@ function LogIn() {
                     notify()  
                     navigate('/')
                   }else if(AddInfoUser.Email === "Admin@gmail.com" && AddInfoUser.Createpassword === "AdminAdmin%%%%%%%"){
+                    localStorage.setItem("isLogin","true") 
+                    localStorage.setItem("Name","Admin")
                     const notify = () => toast.success("success Admin");
                     notify()  
                     navigate('/RequestListAdmin')
                   }else{
+                    // const notify = () => toast.success("s");
+                    // notify() 
+                    localStorage.setItem("isLogin","true") 
+                    localStorage.setItem("Name",LonInUser.Name)
+                    localStorage.setItem("id",LonInUser.id)
                     const notify = () => toast.success(`success${AddInfoUser.Name}`);
                     notify()  
-                    navigate('/dashboard')
+                    navigate('/HomePage')
                   }
             })
             .catch((error) =>{
