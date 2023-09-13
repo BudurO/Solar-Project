@@ -64,8 +64,8 @@ function NavbarHome() {
                             href={item.href}
                             className={classNames(
                               item.current
-                                ? 'bg-bg-white text-white text-sm font-medium lg:text-lg xl:text-2xl md:text-sm sm:text-sm'
-                                : 'text-gray-300 hover:bg-bg-white hover:text-white text-sm font-medium lg:text-lg xl:text-2xl md:text-sm sm:text-sm',
+                                ? 'bg-bg-white text-white text-sm font-medium lg:text-lg xl:text-lg md:text-sm'
+                                : 'text-gray-300 hover:bg-bg-white hover:text-white text-sm font-medium lg:text-lg xl:text-lg md:text-sm sm:text-sm',
                               'rounded-md px-3 py-2'
                             )}
                             aria-current={item.current ? 'page' : undefined}
@@ -94,8 +94,8 @@ function NavbarHome() {
                             <div className=' text-[#FEB221] font-medium underline underline-offset-2 ml-3'>
                               <a href="/dashboard">{getName}</a>
                             </div>
-                            </div>:<a className='ml-4 bg-white px-3 py-2 rounded-md text-sm lg:text-lg xl:text-2xl' href='/'>Login</a>}
-                            {isLogin=="true"?<a className='ml-4 bg-white px-3 py-2 rounded-md text-sm lg:text-lg xl:text-xl' onClick={LogOut}>Logout</a>:<a className='ml-10 bg-white px-3 py-2 rounded-md' href='/SingnUp'>Sign Up</a>}
+                            </div>:<a className='ml-4 bg-white px-3 py-2 rounded-md text-sm lg:text-lg xl:text-lg md:text-sm' href='/'>Login</a>}
+                            {isLogin=="true"?<a className='ml-6 bg-white px-3 py-2 rounded-md text-sm lg:text-lg xl:text-lg md:text-sm' onClick={LogOut}>Logout</a>:<a className='ml-10 bg-white px-3 py-2 rounded-md' href='/SingnUp'>Sign Up</a>}
                             {/* {isLoginAdmin=="true"?<div className='flex justify-between '>
                                 <div className='ml-3'>
                                     <svg style={{color: "white"}} xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-person-circle" viewBox="0 0 16 16"> <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" fill="white"></path> <path fillRule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" fill="white"></path> </svg>
