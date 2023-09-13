@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../Components/Navbar';
 
 type InfoRent={
     id?:string,
@@ -14,6 +15,12 @@ type InfoRent={
     Rejected?:string
 }
 function RequestListAdmin() {
+    const isLogin = localStorage.getItem("isLogin")
+    const isLoginAdmin = localStorage.getItem("isLoginAdmin")
+    const nav = useNavigate()
+    if(isLogin!="true"){
+        return nav("/")
+    }
     const [Info, getInfo] = React.useState<InfoRent[]>([]);
 
     const [MyState,setMyState] = React.useState<InfoRent>({
@@ -31,8 +38,7 @@ function RequestListAdmin() {
     },[]);
     
     let cunt= 1;
-
-    const nav = useNavigate();
+    
     const newState = localStorage.getItem("id");
     const UpdateState = () => {
         
@@ -43,9 +49,10 @@ function RequestListAdmin() {
         nav("/RequestListAdmin")
         })
     }
-    
+
   return (
     <>
+    <Navbar/>
  <div className="flex flex-col h-screen bg-gray-100">
             <div className="bg-white w-full h-1"></div>
             <div className="flex-1 flex flex-wrap">

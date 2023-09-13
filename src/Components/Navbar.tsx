@@ -16,11 +16,16 @@ function Navbar() {
         return classes.filter(Boolean).join(' ')
       }
       const isLogin= localStorage.getItem("isLogin")
+      const isLoginAdmin = localStorage.getItem("isLoginAdmin")
       const getName= localStorage.getItem("Name")
       const LogOut=()=>{
         localStorage.setItem("isLogin","false")
         nav("/")
       }
+    //   const LogOutAdmin = ()=>{
+    //     localStorage.setItem("isLoginAdmin","false")
+    //     nav("/")
+    //   }
   return (
     <>
 
@@ -47,7 +52,7 @@ function Navbar() {
 
                       <Menu as="div" className="relative ml-3">
                         <div className=''>
-                          <Menu.Button className="relative flex max-w-xs items-center rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                          <Menu.Button className="relative flex max-w-xs items-center rounded-full text-sm">
                             {/* <span className="absolute -inset-1.5" />
                             <span className="sr-only">Open user menu</span>
                             <img className="h-8 w-8 rounded-full" src={ImgeUser} alt="" /> */}
@@ -56,11 +61,20 @@ function Navbar() {
                                     <svg style={{color: "white"}} xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-person-circle" viewBox="0 0 16 16"> <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" fill="white"></path> <path fillRule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" fill="white"></path> </svg>
                                 </div>
                             <div className=' text-[#FEB221] font-medium underline underline-offset-2 ml-3'>
-                                <p>{getName}</p>
+                                <a href="/dashboard">{getName}</a>
                             </div>
                             </div>:<a className='ml-4 bg-white px-3 py-2 rounded-md' href='/'>Login</a>}
                             {isLogin=="true"?<a className='ml-4 bg-white px-3 py-2 rounded-md' onClick={LogOut}>Logout</a>:<a className='ml-10 bg-white px-3 py-2 rounded-md' href='/SingnUp'>Sign Up</a>}
-                            
+                            {/* {isLoginAdmin=="true"?<div className='flex justify-between '>
+                                <div className='ml-3'>
+                                    <svg style={{color: "white"}} xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-person-circle" viewBox="0 0 16 16"> <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" fill="white"></path> <path fillRule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" fill="white"></path> </svg>
+                                </div>
+                            <div className=' text-[#FEB221] font-medium underline underline-offset-2 ml-3'>
+                                <a href="/RequestListAdmin">{getName}</a>
+                            </div>
+                            </div>:<a className='ml-4 bg-white px-3 py-2 rounded-md' href='/'>Login</a>}
+                            {isLoginAdmin=="true"?<a className='ml-4 bg-white px-3 py-2 rounded-md' onClick={LogOutAdmin}>Logout</a>:<a className='ml-10 bg-white px-3 py-2 rounded-md' href='/SingnUp'>Sign Up</a>}
+                             */}
 
                           </Menu.Button>
                         </div>
