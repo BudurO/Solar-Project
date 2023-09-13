@@ -126,7 +126,7 @@ function RequestListAdmin() {
                                 localStorage.setItem("id", String(item.State));
                               }}
                             >
-                             Now
+                             {item.State}
                             </option>
 
                             <option
