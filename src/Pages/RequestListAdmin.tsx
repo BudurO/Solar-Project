@@ -6,20 +6,34 @@ type InfoRent = {
   id?: string;
   Area?: string;
   Locaiton?: { placeName: string };
-  State: string;
+  State?: string;
   Number?: string;
   Name?: string;
-//   Underprocess?: string;
-//   Approved?: string;
-//   Rejected?: string;
+  Underprocess?: string;
+  Approved?: string;
+  Rejected?: string;
 };
 function RequestListAdmin() {
   const [Info, getInfo] = React.useState<InfoRent[]>([]);
 
   const [MyState, setMyState] = React.useState<InfoRent>({
-    State: ""
+    State: "New",
+    // Underprocess: "Underprocess",
+    // Approved: "Approved",
+    // Rejected: "Rejected",
   });
 
+  // const ChangeState = () =>{
+  //   if(MyState.State == "New"){
+  //     return "New"
+  //   }else if (MyState.State == "Underprocess"){
+  //     return "Underprocess"
+  //   } else if (MyState.State == "Approved"){
+  //     return "Approved"
+  //   } else if (MyState.State == "Rejected"){
+  //     return "Rejected"
+  //   }
+  // };
   React.useEffect(() => {
     axios
       .get("https://64f37a17edfa0459f6c69e5b.mockapi.io/Rent")
@@ -91,7 +105,7 @@ function RequestListAdmin() {
                           #{cunt++}
                         </td>
                         <td className="py-2 px-4 border-b border-grey-light border-r text-[.4rem] lg:text-sm md:text-sm">
-                          {item.Locaiton?.placeName}
+                          {item.Locaiton.placeName}
                         </td>
                         <td className="py-2 px-4 border-b border-grey-light border-r text-[.4rem] lg:text-sm md:text-sm">
                           <select
@@ -99,54 +113,49 @@ function RequestListAdmin() {
                             id=""
                             onClick={() => {
                               localStorage.setItem("id", String(item.id));
+                              UpdateState();
+                              console.log(MyState);
+                              
                             }}
                             onChange={(e) => {
-                            
-                              setMyState(e.target.value);
-                              console.log(MyState);
-                              UpdateState();
+                              setMyState({ ...MyState, State: e.target.value });
                             }}
                           >
-                            {/* <option
-                              value={"Now"}
-                              onClick={() => {
-                              localStorage.setItem("id", String(item.State));
+                            <option
+                              onChange={() => {
+                                localStorage.setItem("id", String(item.State));
                               }}
                             >
-                              Now
-                            </option> */}
+                             Now
+                            </option>
 
                             <option
-                              onClick={() => {
-                                localStorage.setItem("id", String(item.State));
-                                setMyState(item.State)
+                              onChange={() => {
+                                localStorage.setItem("id", String(item.Underprocess));
                               }}
-                              value={"Underprocess"}
+                              // value={MyState.Underprocess}
                             >
                               Underprocess
                             </option>
 
                             <option
-                              onClick={() => {
-                                localStorage.setItem("id", String(item.State));
-                                setMyState(item.State)
-
+                              onChange={() => {
+                                localStorage.setItem("id", String(item.Approved));
                               }}
-                              value={"Approved"}
+                              // value={MyState.Approved}
                             >
                               Approved
                             </option>
 
                             <option
-                              onClick={() => {
-                                localStorage.setItem("id", String(item.State));
-                                setMyState(item.State)
+                              onChange={() => {
+                                localStorage.setItem("id", String(item.Rejected));
                               }}
-                              value={"Rejected"}
+                              // value={MyState.Rejected}
                             >
-                              Rejected
+                             Rejected
                             </option>
-
+                            
                           </select>
                         </td>
                         <td className="py-2 px-4 border-b border-grey-light border-r text-[.4rem] lg:text-sm md:text-sm">
