@@ -24,7 +24,7 @@ function HomePage() {
     <img className='' src={LineImg} alt="" />
     </div>
 
-<body className="bg-white">
+<div className="bg-white">
 
 <section id='Service'>
       <div className="grid sm:grid-cols-3 gap-4 grid-cols-2 mb-8 ml-14">
@@ -88,7 +88,7 @@ function HomePage() {
            </form>
 </section>
 
-</body>
+</div>
     </>
   )
 }
