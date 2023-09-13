@@ -33,6 +33,7 @@ function UserRequest() {
             if (result.isConfirmed) {
                 axios.delete(`https://64f37a17edfa0459f6c69e5b.mockapi.io/Rent/${id}`)
                 .then((res)=>{
+                    setInfo(res.data)
                     setInfo(
                         Info.filter((del)=>{
                             return del.id !== id;
