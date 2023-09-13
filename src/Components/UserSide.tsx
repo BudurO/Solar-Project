@@ -1,5 +1,3 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
 
 function UserSide() {
     const getpage = localStorage.getItem("Page")

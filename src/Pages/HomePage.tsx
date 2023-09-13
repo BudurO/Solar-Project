@@ -1,4 +1,3 @@
-import React from 'react'
 import HomePageImg from '../assets/HomePage.png'
 import LineImg from '../assets/line.png'
 import Mask0 from '../assets/Mask group.svg'
@@ -8,7 +7,6 @@ import ImgVision from '../assets/ImgVision.svg'
 import lineVision0 from '../assets/lineVision0.png'
 import lineVision1 from '../assets/lineVision1.png'
 import Ellipse from '../assets/Ellipse .png'
-import contactUs from '../assets/contact-us.svg'
 import Navbar from '../Components/NavbarHome'
 import Footer from '../Components/Footer'
 function HomePage() {

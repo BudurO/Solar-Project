@@ -1,7 +1,3 @@
-import axios from 'axios'
-import Swal from 'sweetalert2'
-// import 'sweetalert2/src/sweetalert2.scss'
-import React from 'react'
 import Navbar from '../Components/Navbar';
 import UserRequest from '../Components/UserRequest';
 import UserSide from '../Components/UserSide';

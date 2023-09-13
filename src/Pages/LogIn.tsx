@@ -26,7 +26,7 @@ function LogIn() {
 
           }); 
 
-        const [LogInUserO,setLogInUser] = React.useState<IuserLogIn[]>([]); 
+        // const [LogInUserO,setLogInUser] = React.useState<IuserLogIn[]>([]); 
         const navigate = useNavigate();
 
         const LogInUser = () =>{
@@ -63,12 +63,6 @@ function LogIn() {
                     const notify = () => toast.success("success Admin");
                     notify()  
                     navigate('/RequestListAdmin')
-                  }else if(AddInfoUser.Email === "Admin77@gmail.com" && AddInfoUser.Createpassword === "AdminAdmin%%%%%%%77"){
-                    localStorage.setItem("isLogin","true") 
-                    localStorage.setItem("Name","Admin")
-                    const notify = () => toast.success("success Admin");
-                    notify()  
-                    navigate('/RequestListAdmin')
                   }else{
                     // const notify = () => toast.success("s");
                     // notify() 
@@ -85,7 +79,6 @@ function LogIn() {
               
             });
           };
-     
   return (
     <>
         <Navbar/>
@@ -117,7 +110,7 @@ function LogIn() {
 </div>
  <span className='flex text-[#0C0A3E] text-xs ml-8' style={{color: "red"}}>{errorMessagelength}</span>
 <div className='flex justify-center'>
-<button className="block text-center cursor-pointer	w-40 rounded-md bg-[#FFD35C] mt-4 py-2  text-[#0C0A3E] font-semibold mb-2 shadow-lg border-[1px]" onClick={() => LogInUser(AddInfoUser.Email,AddInfoUser.Createpassword)}>LogIn</button>
+<button className="block text-center cursor-pointer	w-40 rounded-md bg-[#FFD35C] mt-4 py-2  text-[#0C0A3E] font-semibold mb-2 shadow-lg border-[1px]" onClick={() => LogInUser()}>LogIn</button>
 </div>
 <ToastContainer 
   position = {"top-center"}

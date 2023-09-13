@@ -1,6 +1,5 @@
-import React from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Disclosure, Menu} from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import ImgLogoNavbar from '../assets/navbarlogo.svg'
 import { useNavigate } from 'react-router-dom'
 function NavbarHome() {
@@ -16,30 +15,30 @@ function NavbarHome() {
         { name: 'Contact us', href: '#contactUs', current: false },
         { name: 'Service', href: '#Service', current: false },
       ]
-      const userNavigation = [
-        // { name: 'Your Profile', href: '#' },
-        // { name: 'Settings', href: '#' },
-        // { name: 'Sign out', href: '#' },
-        { name: 'Log In', href: '/' },
-        { name: 'Sign Up', href: '/SingnUp' },
+      // const userNavigation = [
+      //   // { name: 'Your Profile', href: '#' },
+      //   // { name: 'Settings', href: '#' },
+      //   // { name: 'Sign out', href: '#' },
+      //   { name: 'Log In', href: '/' },
+      //   { name: 'Sign Up', href: '/SingnUp' },
 
-      ]
+      // ]
       function classNames(...classes: string[]) {
         return classes.filter(Boolean).join(' ')
       }
       const nav = useNavigate();
 
       const isLogin= localStorage.getItem("isLogin")
-      const isLoginAdmin = localStorage.getItem("isLoginAdmin")
+      // const isLoginAdmin = localStorage.getItem("isLoginAdmin")
       const getName= localStorage.getItem("Name")
       const LogOut=()=>{
         localStorage.setItem("isLogin","false")
         nav("/")
       }
-      const LogOutAdmin = ()=>{
-        localStorage.setItem("isLoginAdmin","false")
-        nav("/")
-      }
+      // const LogOutAdmin = ()=>{
+      //   localStorage.setItem("isLoginAdmin","false")
+      //   nav("/")
+      // }
   return (
     <>
       <div className="min-h-full">
@@ -145,14 +144,16 @@ function NavbarHome() {
                 <div className="border-t border-gray-700 pb-3 pt-4">
                   <div className="flex items-center px-5">
                     
-                    <div>
-                      <a className='relative ml-auto flex-shrink-0 rounded-full  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white' href='/SingnUp'>Sign Up</a>
-                    </div>
-                    <button
-                      type="button"
-                      className="relative ml-auto flex-shrink-0 rounded-full  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
-                    >
-                    </button>
+                  {isLogin=="true"?<div className='flex justify-between '>
+                                <div className=''>
+                                    <svg style={{color: "white"}} xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-person-circle" viewBox="0 0 16 16"> <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" fill="white"></path> <path fillRule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" fill="white"></path> </svg>
+                                </div>
+                            <div className=' text-[#FEB221] font-medium underline underline-offset-2 ml-3'>
+                              <a href="/dashboard">{getName}</a>
+                            </div>
+                            </div>:<a className='relative flex-shrink-0 rounded-full  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white' href='/SingnUp'>Sign Up</a>}
+                    
+                    
                   </div>
                   
                   
@@ -160,10 +161,12 @@ function NavbarHome() {
 
                 <div className="border-t border-gray-700 pb-3 pt-4">
                   <div className="flex items-center px-5">
-                    
-                    <div>
+
+                  {isLogin=="true"?<a className='relative  flex-shrink-0 rounded-full  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white' onClick={LogOut}>Logout</a>:<a className='relative flex-shrink-0 rounded-full  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white' href='/'>Login</a>}
+
+                    {/* <div>
                       <a className='relative ml-auto flex-shrink-0 rounded-full  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white' href='/'>Login</a>
-                    </div>
+                    </div> */}
                     <button
                       type="button"
                       className="relative ml-auto flex-shrink-0 rounded-full  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"

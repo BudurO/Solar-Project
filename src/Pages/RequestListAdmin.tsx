@@ -2,7 +2,6 @@ import axios from "axios";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
 type InfoRent = {
   id?: string;
   Area?: string;
@@ -96,9 +95,10 @@ function RequestListAdmin() {
                         <td className="py-2 px-4 border-b border-grey-light border border-dashed  rounded-full w-10 text-[.4rem] lg:text-sm md:text-sm h-14 pt-2">
                           #{cunt++}
                         </td>
-                        <td className="py-2 px-4 border-b border-grey-light border-r text-[.4rem] lg:text-sm md:text-sm">
+                        {item.Locaiton?<td className="py-2 px-4 border-b border-grey-light border-r text-[.4rem] lg:text-sm md:text-sm">
                           {item.Locaiton.placeName}
-                        </td>
+                        </td>:<td></td>}
+                        
                         <td className="py-2 px-4 border-b border-grey-light border-r text-[.4rem] lg:text-sm md:text-sm">
                           <select
                           className=" border border-solid border-gray-300 rounded-md shadow-md h-9"
