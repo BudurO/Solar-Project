@@ -9,7 +9,6 @@
 - Building a website that allows the user to submit a request to rent the roof of his house.
 - Names of team members and their Github accounts:
 - Name: Budur Althubyani , Github accounts: `https://github.com/BudurO` && Name: Amzan Abdullah , Github accounts: `https://github.com/amzan1`
-- 
 
 ## Website design Figma:
 
