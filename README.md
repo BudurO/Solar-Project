@@ -36,6 +36,11 @@
 
 <img width="1440" alt="Screenshot 2023-09-14 at 7 13 06 PM" src="https://github.com/BudurO/Solar-Project/assets/126987505/1d9cda18-4b2d-47b3-b45d-10452c68b65a">
 
+<img width="1440" alt="Screenshot 2023-09-14 at 7 18 39 PM" src="https://github.com/BudurO/Solar-Project/assets/126987505/3312f385-238c-4d12-9d6f-05f41fb4b182">
+
+<img width="1440" alt="Screenshot 2023-09-14 at 7 18 30 PM" src="https://github.com/BudurO/Solar-Project/assets/126987505/e2d2817f-be53-4b4c-80a4-a33d53f7a1f2">
+
+
 <img width="1440" alt="Screenshot 2023-09-14 at 7 12 07 PM" src="https://github.com/BudurO/Solar-Project/assets/126987505/71e9ffad-8abc-4d3a-8d56-7f80e21985ab">
 
 <img width="1440" alt="Screenshot 2023-09-14 at 7 12 07 PM" src="https://github.com/BudurO/Solar-Project/assets/126987505/674be058-0da7-4899-a256-755adf2d108f">
