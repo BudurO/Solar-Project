@@ -1,4 +1,4 @@
-<img width="1440" alt="Screenshot 2023-09-14 at 7 12 07 PM" src="https://github.com/BudurO/Solar-Project/assets/126987505/674be058-0da7-4899-a256-755adf2d108f"># Solar-Project
+# Solar-Project
 
 
 
@@ -39,4 +39,4 @@
 
 <img width="1440" alt="Screenshot 2023-09-14 at 7 12 07 PM" src="https://github.com/BudurO/Solar-Project/assets/126987505/71e9ffad-8abc-4d3a-8d56-7f80e21985ab">
 
-
+<img width="1440" alt="Screenshot 2023-09-14 at 7 12 07 PM" src="https://github.com/BudurO/Solar-Project/assets/126987505/674be058-0da7-4899-a256-755adf2d108f">
