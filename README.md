@@ -181,9 +181,6 @@
 ut Form (1).svg…]()
 
 
-![Request list admin (1)](https://github.com/BudurO/Solar-Project/assets/126987505/f945e3a2-ef59-4aeb-8e2b-95a4daaab1d6)
-
-
 - Publication url: `https://65022d7f989e4d532df2f53e--sparkly-squirrel-0132da.netlify.app/`
 
   ## Images/screenshots of the project:
