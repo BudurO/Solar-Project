@@ -3,6 +3,7 @@
 
 
 - Description:
+- Saudi Arabia is investing a lot in solar energy as part of its Vision 2030 plan, which encourages the use of clean energy while reducing carbon emissions. We get solar energy through solar panels installed in the most exposed places to the sun, and the best of these places are the rooftops of houses. Our site, "solar," allows homeowners to apply to rent their roof.
 - the problem :
 - Difficulty finding suitable spaces to install solar panels
 - the proposed solution :
@@ -12,19 +13,8 @@
 
 ## Website design Figma:
 
-![Home Page (1)](https://github.com/BudurO/Solar-Project/assets/126987505/ed46b43c-d863-44c9-a1f4-2d9b906e7727)
+<img width="760" alt="Screen_Shot_2023-09-17_at_5 36 57_PM" src="https://github.com/BudurO/Solar-Project/assets/126987505/bc826e2e-9fed-4519-9cd5-5d7a22c11d70">
 
-![Log in (1)](https://github.com/BudurO/Solar-Project/assets/126987505/17476e1b-5aac-4dee-987f-a1892c988978)
-
-![Sign up (1)](https://github.com/BudurO/Solar-Project/assets/126987505/ae282093-8874-4ddd-bfe9-42abeff90048)
-
-![Request list user (1)](https://github.com/BudurO/Solar-Project/assets/126987505/19039293-d4f5-424b-b7ec-b572e68472b6)
-
-![Personal info (1)](https://github.com/BudurO/Solar-Project/assets/126987505/7bd32aad-ed28-4c63-8975-2aa611e46fba)
-
-![Renting Out Form (1)](https://github.com/BudurO/Solar-Project/assets/126987505/91905a52-423e-4ccb-bcb2-a9acbb015f28)
-
-![Request list admin (1)](https://github.com/BudurO/Solar-Project/assets/126987505/abb74d7c-7f54-4e44-8757-b9625e8eecba)
 
 - Publication url: `https://65022d7f989e4d532df2f53e--sparkly-squirrel-0132da.netlify.app/`
 
