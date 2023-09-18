@@ -16,7 +16,10 @@
 <img width="760" alt="Screen_Shot_2023-09-17_at_5 36 57_PM" src="https://github.com/BudurO/Solar-Project/assets/126987505/bc826e2e-9fed-4519-9cd5-5d7a22c11d70">
 
 
-- Publication url: `https://65022d7f989e4d532df2f53e--sparkly-squirrel-0132da.netlify.app/`
+- Publication url:
+
+![Solar_barcode](https://github.com/BudurO/Solar-Project/assets/126987505/13377ce1-fa77-48e6-a7a7-c1dba30781a9)
+
 
   ## Images/screenshots of the project:
  
